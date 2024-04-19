@@ -1,2 +1,40 @@
 # adventure-day-agent
 This repository host the adventure day agent
+
+## Quickstart
+
+```
+# Log in to azd. Only required once per-install.
+azd auth login
+
+# Provision and deploy to Azure
+azd up
+```
+
+
+## Configure the local env config for testing
+
+
+
+## Test API for Challenge 1
+
+Go to directory src-agents/challenge1
+
+Start up the agent api
+```
+uvicorn main:app --reload
+```
+
+Test the api with:
+```
+curl -X 'POST' \
+  'http://localhost:8000/ask' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "Who is the actor behind iron man?  1. Bill Gates, 2. Robert Downey Jr, 3. Jeff Bezos",
+  "type": "multiple_choice",
+  "correlationToken": "fgsdfgsd"
+}'
+
+```
