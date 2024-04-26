@@ -4,6 +4,7 @@ param tags object = {}
 
 param containerAppsEnvironmentName string
 param containerName string = 'main'
+param imageName string
 param containerRegistryName string
 param secrets array = []
 param env array = []
@@ -39,7 +40,7 @@ module app 'container-app.bicep' = {
     secrets: secrets
     external: external
     env: env
-    imageName: exists ? existingApp.properties.template.containers[0].image : ''
+    imageName: imageName
     targetPort: targetPort
   }
 }

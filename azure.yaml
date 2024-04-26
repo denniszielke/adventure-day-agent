@@ -1,14 +1,26 @@
 name: adventure-day-agents
 metadata:
   template: openai-plugin-fastapi@0.0.1-beta
-services:
-  challenge1:
-    project: ./src-agents/challenge1
-    dist: build
-    language: python
-    host: containerapp
-    docker:
-      path: ./Dockerfile
-      context: ./
+hooks:
+  postprovision:
+    posix:
+      shell: sh
+      continueOnError: false
+      interactive: true
+      run: azd-hooks/post-provision.sh
+# services:
+  # challenge1:
+  #   project: ./src-agents/challenge1
+  #   language: py
+  #   host: containerapp
+  #   module: challenge1
+  # challenge2:
+  #   project: ./src-agents/challenge2
+  #   dist: build
+  #   language: python
+  #   host: containerapp
+  #   docker:
+  #     path: ./Dockerfile
+  #     context: ./
 infra:
   provider: bicep

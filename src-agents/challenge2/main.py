@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from enum import Enum
 from openai import AzureOpenAI
-from azure.identity import DeviceCodeCredential
 
 app = FastAPI()
 
@@ -27,16 +26,8 @@ class Answer(BaseModel):
     promptTokensUsed: int | None = None
     completionTokensUsed: int | None = None
 
-openai_access = ''
-
-if "AZURE_TENANT_ID" in os.environ:
-    default_credential = DeviceCodeCredential(tenant_id=os.getenv("AZURE_TENANT_ID"))
-    openai_access = default_credential.get_token("https://cognitiveservices.azure.com/.default").token
-else:
-    openai_access = os.getenv("AZURE_OPENAI_API_KEY")
-
 client = AzureOpenAI(
-  api_key = openai_access,  
+  api_key = os.getenv("AZURE_OPENAI_API_KEY"),  
   api_version = os.getenv("AZURE_OPENAI_VERSION"),
   azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
 )

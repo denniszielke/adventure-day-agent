@@ -7,15 +7,6 @@
     },
     "location": {
       "value": "${AZURE_LOCATION}"
-    },
-    "openaiApiKey": {
-      "value": "${AZURE_OPENAI_API_KEY}"
-    },
-    "openaiEndpoint": {
-      "value": "${AZURE_OPENAI_ENDPOINT}"
-    },
-    "completionDeploymentName": {
-      "value": "${AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME}"
     }
   }
 }

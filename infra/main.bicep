@@ -9,31 +9,45 @@ param environmentName string
 @description('Primary location for all resources')
 param location string
 
-@minLength(1)
-@description('Openai API key for the API to use.')
-param openaiApiKey string
-
-@minLength(1)
-@description('Openai API Endpoint for the API to use.')
-param openaiEndpoint string
-
-@minLength(1)
-@description('Name of the OpenAI Completion model deployment name.')
-param completionDeploymentName string
-
 param resourceGroupName string = ''
 param containerAppsEnvironmentName string = ''
 param containerRegistryName string = ''
-param apiContainerAppName string = ''
+param openaiName string = ''
+param apiContainerAppName string = 'challenge1'
 param applicationInsightsDashboardName string = ''
 param applicationInsightsName string = ''
 param logAnalyticsName string = ''
 
-param apiAppExists bool = false
+param challenge1Exists bool = false
 
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 var tags = { 'azd-env-name': environmentName }
+
+param completionDeploymentModelName string = 'gpt-35-turbo'
+param completionModelName string = 'gpt-35-turbo'
+param completionModelVersion string = '0613'
+param embeddingDeploymentModelName string = 'text-embedding-ada-002'
+param embeddingModelName string = 'text-embedding-ada-002'
+
+param modelDeployments array = [
+  {
+    name: completionDeploymentModelName
+    model: {
+      format: 'OpenAI'
+      name: completionModelName
+      version: completionModelVersion
+    }
+  }
+  {
+    name: embeddingDeploymentModelName
+    model: {
+      format: 'OpenAI'
+      name: embeddingModelName
+      version: '2'
+    }
+  }
+]
 
 // Organize resources in a resource group
 resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
@@ -55,7 +69,7 @@ module containerApps './core/host/container-apps.bicep' = {
   }
 }
 
-// API
+// Challenge 1 Container App
 module challenge1 './app/challenge1.bicep' = {
   name: 'challenge1'
   scope: resourceGroup
@@ -63,14 +77,28 @@ module challenge1 './app/challenge1.bicep' = {
     name: !empty(apiContainerAppName) ? apiContainerAppName : '${abbrs.appContainerApps}api-${resourceToken}'
     location: location
     tags: tags
-    identityName: '${abbrs.managedIdentityUserAssignedIdentities}api-${resourceToken}'
+    imageName: ''
+    identityName: '${abbrs.managedIdentityUserAssignedIdentities}api-agents'
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: containerApps.outputs.environmentName
     containerRegistryName: containerApps.outputs.registryName
-    openaiApiKey: openaiApiKey
-    openaiEndpoint: openaiEndpoint
-    completionDeploymentName: completionDeploymentName
-    exists: apiAppExists
+    openaiApiKey: openai.outputs.openaiKey
+    openaiEndpoint: openai.outputs.openaiEndpoint
+    completionDeploymentName: completionDeploymentModelName
+    exists: challenge1Exists
+  }
+}
+
+// Monitor application with Azure Monitor
+module openai './ai/openai.bicep' = {
+  name: 'openai'
+  scope: resourceGroup
+  params: {
+    location: location
+    tags: tags
+    customDomainName: !empty(openaiName) ? openaiName : '${abbrs.cognitiveServicesAccounts}${resourceToken}'
+    name: !empty(openaiName) ? openaiName : '${abbrs.cognitiveServicesAccounts}${resourceToken}'
+    deployments: modelDeployments
   }
 }
 
@@ -96,4 +124,5 @@ output APPLICATIONINSIGHTS_NAME string = monitoring.outputs.applicationInsightsN
 output AZURE_CONTAINER_ENVIRONMENT_NAME string = containerApps.outputs.environmentName
 output AZURE_CONTAINER_REGISTRY_ENDPOINT string = containerApps.outputs.registryLoginServer
 output AZURE_CONTAINER_REGISTRY_NAME string = containerApps.outputs.registryName
-output SERVICE_API_NAME string = challenge1.outputs.SERVICE_API_NAME
+output SERVICE_NAME_CHALLENGE1 string = challenge1.outputs.SERVICE_API_NAME
+// output SERVICE_NAME_CHALLENGE2 string = challenge2.outputs.SERVICE_API_NAME

@@ -1,6 +1,12 @@
 # adventure-day-agent
 This repository host the adventure day agent
 
+Regions that this deployment can be executed:
+- uksouth
+- swedencentral
+- canadaeast
+- australiaeast
+
 ## Quickstart
 
 ```
@@ -32,7 +38,6 @@ AZURE_OPENAI_EMBEDDING_VERSION = "2024-02-01"
 
 ```
 
-
 ## Test API for Challenge 1
 
 Go to directory src-agents/challenge1
@@ -54,4 +59,12 @@ curl -X 'POST' \
   "correlationToken": "fgsdfgsd"
 }'
 
+```
+
+## Deploy resources for Challenge X
+
+Run the following script
+
+```
+bash ./azd-hooks/deploy.sh challenge1 $ENVIRONMENT_NAME
 ```

@@ -1,40 +1,35 @@
 param name string
 param location string = resourceGroup().location
-param tags object = {}
-
-@minLength(1)
-@description('Openai API key for the API to use.')
-param openaiApiKey string
-
-@minLength(1)
-@description('Openai API Endpoint for the API to use.')
-param openaiEndpoint string
-
-@minLength(1)
-@description('Name of the OpenAI Completion model deployment name.')
-param completionDeploymentName string
-
-param exists bool
-param identityName string
-param applicationInsightsName string
+param exists bool = true
 param containerAppsEnvironmentName string
 param containerRegistryName string
-param serviceName string = 'challenge1'
+param applicationInsightsName string
+param identityName string
+param openaiName string
 param imageName string
 
-resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
+var tags = { 'azd-env-name': containerAppsEnvironmentName }
+var completionDeploymentModelName = 'gpt-35-turbo'
+
+resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = {
   name: identityName
-  location: location
 }
 
+resource account 'Microsoft.CognitiveServices/accounts@2022-10-01' existing = {
+  name: openaiName  
+}
+
+var openaiEndpoint = account.properties.endpoint
+var openaiApiKey = listKeys(account.id, '2022-10-01').key1
+
 module app '../core/host/container-app-upsert.bicep' = {
-  name: '${serviceName}-container-app'
+  name: '${name}-container-app'
   params: {
     name: name
     location: location
-    imageName: imageName
-    tags: union(tags, { 'azd-service-name': serviceName })
+    tags: union(tags, { 'azd-service-name': name })
     identityName: identityName
+    imageName: imageName
     exists: exists
     containerAppsEnvironmentName: containerAppsEnvironmentName
     containerRegistryName: containerRegistryName
@@ -57,7 +52,7 @@ module app '../core/host/container-app-upsert.bicep' = {
       }
       {
         name: 'AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME'
-        value: completionDeploymentName
+        value: completionDeploymentModelName
       }
       {
         name: 'AZURE_OPENAI_VERSION'
@@ -68,7 +63,7 @@ module app '../core/host/container-app-upsert.bicep' = {
         value: 'azure'
       }
     ]
-    targetPort: 80
+    targetPort: 8080
   }
 }
 

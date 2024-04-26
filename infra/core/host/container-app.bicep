@@ -9,16 +9,16 @@ param secrets array = []
 param env array = []
 param external bool = true
 param imageName string
-param targetPort int = 8080
+param targetPort int = 80
 
 @description('User assigned identity name')
 param identityName string = ''
 
 @description('CPU cores allocated to a single container instance, e.g. 0.5')
-param containerCpuCoreCount string = '0.5'
+param containerCpuCoreCount string = '1'
 
 @description('Memory allocated to a single container instance, e.g. 1Gi')
-param containerMemory string = '1.0Gi'
+param containerMemory string = '2.0Gi'
 
 resource userIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = {
   name: identityName
