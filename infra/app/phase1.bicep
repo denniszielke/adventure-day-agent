@@ -1,36 +1,43 @@
 param name string
 param location string = resourceGroup().location
-param exists bool = true
+param tags object = {}
+
+@minLength(1)
+@description('Openai API resource name for the API to use.')
+param openaiName string
+
+@minLength(1)
+@description('Openai API Endpoint for the API to use.')
+param openaiEndpoint string
+
+@minLength(1)
+@description('Name of the OpenAI Completion model deployment name.')
+param completionDeploymentName string
+
+param exists bool
+param identityName string
+param applicationInsightsName string
 param containerAppsEnvironmentName string
 param containerRegistryName string
-param applicationInsightsName string
-param identityName string
-param openaiName string
+param serviceName string = 'phase1'
 param imageName string
+param openaiApiVersion string
 
-var tags = { 'azd-env-name': containerAppsEnvironmentName }
-var completionDeploymentModelName = 'gpt-35-turbo'
-
-resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = {
+resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
   name: identityName
+  location: location
 }
-
-resource account 'Microsoft.CognitiveServices/accounts@2022-10-01' existing = {
-  name: openaiName  
-}
-
-var openaiEndpoint = account.properties.endpoint
-var openaiApiKey = listKeys(account.id, '2022-10-01').key1
 
 module app '../core/host/container-app-upsert.bicep' = {
-  name: '${name}-container-app'
+  name: '${serviceName}-container-app'
   params: {
     name: name
     location: location
-    tags: union(tags, { 'azd-service-name': name })
-    identityName: identityName
     imageName: imageName
+    tags: union(tags, { 'azd-service-name': serviceName })
+    identityName: identityName
     exists: exists
+    openaiName: openaiName
     containerAppsEnvironmentName: containerAppsEnvironmentName
     containerRegistryName: containerRegistryName
     env: [
@@ -42,28 +49,28 @@ module app '../core/host/container-app-upsert.bicep' = {
         name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
         value: applicationInsights.properties.ConnectionString
       }
-      {
-        name: 'AZURE_OPENAI_API_KEY'
-        value: openaiApiKey
-      }
+      // {
+      //   name: 'AZURE_OPENAI_API_KEY'
+      //   value: openaiApiKey
+      // }
       {
         name: 'AZURE_OPENAI_ENDPOINT'
         value: openaiEndpoint
       }
       {
         name: 'AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME'
-        value: completionDeploymentModelName
+        value: completionDeploymentName
       }
       {
         name: 'AZURE_OPENAI_VERSION'
-        value: '2024-02-01'
+        value: openaiApiVersion
       }
       {
         name: 'OPENAI_API_TYPE'
         value: 'azure'
       }
     ]
-    targetPort: 8080
+    targetPort: 80
   }
 }
 

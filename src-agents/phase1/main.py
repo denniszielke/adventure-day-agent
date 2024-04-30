@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from enum import Enum
 from openai import AzureOpenAI
-from azure.identity import DeviceCodeCredential
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
 app = FastAPI()
 
@@ -27,19 +27,22 @@ class Answer(BaseModel):
     promptTokensUsed: int | None = None
     completionTokensUsed: int | None = None
 
-openai_access = ''
+client: AzureOpenAI
 
-if "AZURE_TENANT_ID" in os.environ:
-    default_credential = DeviceCodeCredential(tenant_id=os.getenv("AZURE_TENANT_ID"))
-    openai_access = default_credential.get_token("https://cognitiveservices.azure.com/.default").token
+if "AZURE_OPENAI_API_KEY" in os.environ:
+    client = AzureOpenAI(
+        api_key = os.getenv("AZURE_OPENAI_API_KEY"),  
+        api_version = os.getenv("AZURE_OPENAI_VERSION"),
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+    )
 else:
-    openai_access = os.getenv("AZURE_OPENAI_API_KEY")
+    token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
+    client = AzureOpenAI(
+        azure_ad_token_provider=token_provider,
+        api_version = os.getenv("AZURE_OPENAI_VERSION"),
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"),
+    )
 
-client = AzureOpenAI(
-  api_key = openai_access,  
-  api_version = os.getenv("AZURE_OPENAI_VERSION"),
-  azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-)
 deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 
 @app.get("/")

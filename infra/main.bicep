@@ -13,12 +13,12 @@ param resourceGroupName string = ''
 param containerAppsEnvironmentName string = ''
 param containerRegistryName string = ''
 param openaiName string = ''
-param apiContainerAppName string = 'challenge1'
+param apiContainerAppName string = 'phase1'
 param applicationInsightsDashboardName string = ''
 param applicationInsightsName string = ''
 param logAnalyticsName string = ''
 
-param challenge1Exists bool = false
+param phase1Exits bool = false
 
 var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
@@ -29,7 +29,7 @@ param completionModelName string = 'gpt-35-turbo'
 param completionModelVersion string = '0613'
 param embeddingDeploymentModelName string = 'text-embedding-ada-002'
 param embeddingModelName string = 'text-embedding-ada-002'
-
+param openaiApiVersion string = '2024-02-01'
 param modelDeployments array = [
   {
     name: completionDeploymentModelName
@@ -69,9 +69,9 @@ module containerApps './core/host/container-apps.bicep' = {
   }
 }
 
-// Challenge 1 Container App
-module challenge1 './app/challenge1.bicep' = {
-  name: 'challenge1'
+// Phase 1 Container App
+module phase1 './app/phase1.bicep' = {
+  name: 'phase1'
   scope: resourceGroup
   params: {
     name: !empty(apiContainerAppName) ? apiContainerAppName : '${abbrs.appContainerApps}api-${resourceToken}'
@@ -82,10 +82,11 @@ module challenge1 './app/challenge1.bicep' = {
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     containerAppsEnvironmentName: containerApps.outputs.environmentName
     containerRegistryName: containerApps.outputs.registryName
-    openaiApiKey: openai.outputs.openaiKey
+    openaiName: openai.outputs.openaiName
+    openaiApiVersion: openaiApiVersion
     openaiEndpoint: openai.outputs.openaiEndpoint
     completionDeploymentName: completionDeploymentModelName
-    exists: challenge1Exists
+    exists: phase1Exits
   }
 }
 
@@ -124,5 +125,13 @@ output APPLICATIONINSIGHTS_NAME string = monitoring.outputs.applicationInsightsN
 output AZURE_CONTAINER_ENVIRONMENT_NAME string = containerApps.outputs.environmentName
 output AZURE_CONTAINER_REGISTRY_ENDPOINT string = containerApps.outputs.registryLoginServer
 output AZURE_CONTAINER_REGISTRY_NAME string = containerApps.outputs.registryName
-output SERVICE_NAME_CHALLENGE1 string = challenge1.outputs.SERVICE_API_NAME
-// output SERVICE_NAME_CHALLENGE2 string = challenge2.outputs.SERVICE_API_NAME
+output SERVICE_NAME_PHASE1 string = phase1.outputs.SERVICE_API_NAME
+output OPENAI_API_TYPE string = 'azure'
+output AZURE_OPENAI_VERSION string = openaiApiVersion
+output AZURE_OPENAI_API_KEY string = openai.outputs.openaiKey
+output AZURE_OPENAI_ENDPOINT string = openai.outputs.openaiEndpoint
+output AZURE_OPENAI_COMPLETION_MODEL string = completionModelName
+output AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME string = completionDeploymentModelName
+output AZURE_OPENAI_EMBEDDING_MODEL string = embeddingModelName
+output AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME string = embeddingDeploymentModelName
+output PHASE1_URL string = phase1.outputs.SERVICE_API_URI

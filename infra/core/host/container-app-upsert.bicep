@@ -11,6 +11,7 @@ param env array = []
 param external bool = true
 param targetPort int = 8080
 param exists bool
+param openaiName string
 
 @description('User assigned identity name')
 param identityName string = ''
@@ -42,6 +43,7 @@ module app 'container-app.bicep' = {
     env: env
     imageName: imageName
     targetPort: targetPort
+    openaiName: openaiName
   }
 }
 

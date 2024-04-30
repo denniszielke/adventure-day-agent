@@ -8,14 +8,17 @@ hooks:
       continueOnError: false
       interactive: true
       run: azd-hooks/post-provision.sh
+  postdeploy: # Pull environment variable inline from local device and set in .env file
+      shell: sh
+      run: cp .azure/$AZURE_ENV_NAME/.env ./
 # services:
-  # challenge1:
-  #   project: ./src-agents/challenge1
+  # phase1:
+  #   project: ./src-agents/phase1
   #   language: py
   #   host: containerapp
-  #   module: challenge1
-  # challenge2:
-  #   project: ./src-agents/challenge2
+  #   module: phase1
+  # phase2:
+  #   project: ./src-agents/phase2
   #   dist: build
   #   language: python
   #   host: containerapp

@@ -10,16 +10,40 @@ Regions that this deployment can be executed:
 ## Quickstart
 
 ```
-# Log in to azd. Only required once per-install.
+echo "log into azure dev cli - only once"
 azd auth login
 
-# Provision and deploy to Azure
+echo "provisioning all the resources with the azure dev cli"
 azd up
+
+echo "get and set the value for AZURE_ENV_NAME"
+azd env get-values | grep AZURE_ENV_NAME
+source <(azd env get-values)
+
+echo "building and deploying the agent for phase 1"
+bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
+
+```
+
+### Test the deployed resource
+
+```
+PHASE1_URL="https://phase1.calmbush-f12187c5.swedencentral.azurecontainerapps.io"
+
+curl -X 'POST' \
+  "$PHASE1_URL/ask" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "Who is the actor behind iron man?  1. Bill Gates, 2. Robert Downey Jr, 3. Jeff Bezos",
+  "type": "multiple_choice",
+  "correlationToken": "fgsdfgsd"
+}'
 ```
 
 
-## Configure the local env config for testing
-
+## Manual creation of .env file
+The .env file should be created automatically be the azd deployment script but if you want to create it manually these values have to be set:
 Copy *template.env* and rename it to  *.env* config file with OpenAI, AI Search config details
 
 ```
@@ -38,9 +62,9 @@ AZURE_OPENAI_EMBEDDING_VERSION = "2024-02-01"
 
 ```
 
-## Test API for Challenge 1
+## Test API for Phase 1
 
-Go to directory src-agents/challenge1
+Go to directory src-agents/phase1
 
 Start up the agent api
 ```
@@ -61,10 +85,11 @@ curl -X 'POST' \
 
 ```
 
-## Deploy resources for Challenge X
+## Deploy resources for Phase X
 
 Run the following script
 
 ```
-bash ./azd-hooks/deploy.sh challenge1 $ENVIRONMENT_NAME
+azd env get-values | grep AZURE_ENV_NAME
+bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 ```

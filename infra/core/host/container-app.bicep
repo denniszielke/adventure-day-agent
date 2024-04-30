@@ -10,6 +10,7 @@ param env array = []
 param external bool = true
 param imageName string
 param targetPort int = 80
+param openaiName string
 
 @description('User assigned identity name')
 param identityName string = ''
@@ -22,6 +23,14 @@ param containerMemory string = '2.0Gi'
 
 resource userIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = {
   name: identityName
+}
+
+module openaiAccess '../security/openai-access.bicep' = {
+  name: '${deployment().name}-openai-access'
+  params: {
+    openAiName: openaiName
+    principalId: userIdentity.properties.principalId
+  }
 }
 
 module containerRegistryAccess '../security/registry-access.bicep' = {
@@ -82,7 +91,6 @@ resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01'
   name: containerAppsEnvironmentName
 }
 
-// 2022-02-01-preview needed for anonymousPullEnabled
 resource containerRegistry 'Microsoft.ContainerRegistry/registries@2022-02-01-preview' existing = {
   name: containerRegistryName
 }
