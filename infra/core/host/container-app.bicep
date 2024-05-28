@@ -41,7 +41,7 @@ module containerRegistryAccess '../security/registry-access.bicep' = {
   }
 }
 
-resource app 'Microsoft.App/containerApps@2022-03-01' = {
+resource app 'Microsoft.App/containerApps@2023-04-01-preview' = {
   name: name
   location: location
   tags: tags
@@ -72,6 +72,14 @@ resource app 'Microsoft.App/containerApps@2022-03-01' = {
       ]
     }
     template: {
+      serviceBinds : [
+        {
+          serviceId: qdrant.id
+        }
+        {
+          serviceId: redis.id
+        }
+      ]
       containers: [
         {
           image: !empty(imageName) ? imageName : 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
@@ -93,6 +101,14 @@ resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01'
 
 resource containerRegistry 'Microsoft.ContainerRegistry/registries@2022-02-01-preview' existing = {
   name: containerRegistryName
+}
+
+resource redis 'Microsoft.App/containerApps@2023-04-01-preview' existing = {
+  name: 'redis'
+}
+
+resource qdrant 'Microsoft.App/containerApps@2023-04-01-preview' existing = {
+  name: 'qdrant'
 }
 
 output defaultDomain string = containerAppsEnvironment.properties.defaultDomain

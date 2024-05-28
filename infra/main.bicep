@@ -135,3 +135,7 @@ output AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME string = completionDeploymentMode
 output AZURE_OPENAI_EMBEDDING_MODEL string = embeddingModelName
 output AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME string = embeddingDeploymentModelName
 output PHASE1_URL string = phase1.outputs.SERVICE_API_URI
+output QDRANT_ENDPOINT string = containerApps.outputs.qdrantEndpoint
+output QDRANT_PASSWORD string = ''
+output REDIS_ENDPOINT string = containerApps.outputs.redisEndpoint
+output REDIS_PASSWORD string = ''
