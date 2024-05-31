@@ -28,7 +28,7 @@ bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 ### Test the deployed resource
 
 ```
-PHASE1_URL="https://phase1.calmbush-f12187c5.swedencentral.azurecontainerapps.io"
+PHASE1_URL="https://phase1..swedencentral.azurecontainerapps.io"
 
 curl -X 'POST' \
   "$PHASE1_URL/ask" \
@@ -73,8 +73,11 @@ uvicorn main:app --reload
 
 Test the api with:
 ```
+URL='http://localhost:8000'
+URL='https://phase1..uksouth.azurecontainerapps.io'
+
 curl -X 'POST' \
-  'http://localhost:8000/ask' \
+  "$URL/ask" \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -85,70 +88,53 @@ curl -X 'POST' \
 
 ```
 
-## Deploy resources for Phase X
+## Deploy resources for Phase 1
 
 Run the following script
 
 ```
 azd env get-values | grep AZURE_ENV_NAME
+source <(azd env get-values | grep AZURE_ENV_NAME)
 bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 ```
 
+All the other phases work the same.
 
-## Connect to Qdrant
+## Connect to Azure AI Search
 
 The deployment will automatically inject the following environment variables into each running container:
 
 ```
-QDRANT_PORT=6333
-QDRANT_HOST=qdrant
-QDRANT_ENDPOINT=qdrant:6333
-QDRANT_PASSWORD=
+AZURE_AI_SEARCH_NAME=
+AZURE_AI_SEARCH_ENDPOINT=
+AZURE_AI_SEARCH_KEY=
 ```
 
-Here is some sample code that you can use to interact with the deployed Qdrant instance.
+Here is some sample code that you can use to interact with the deployed Azure AI Search instance.
 
 ```
-import os
-import openai
-from langchain.document_loaders import DirectoryLoader, UnstructuredMarkdownLoader
-from langchain_openai import AzureOpenAIEmbeddings
+from azure.core.credentials import AzureKeyCredential
+credential = AzureKeyCredential(os.environ["AZURE_AI_SEARCH_KEY"]) if len(os.environ["AZURE_AI_SEARCH_KEY"]) > 0 else DefaultAzureCredential()
 
-from langchain_openai import AzureOpenAIEmbeddings
-# Create an Embeddings Instance of Azure OpenAI
-embeddings = AzureOpenAIEmbeddings(
-    azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
-    openai_api_version = os.getenv("AZURE_OPENAI_VERSION"),
-    model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
+from azure.search.documents import SearchClient
+
+index_name = "movies-semantic-index"
+
+search_client = SearchClient(
+    os.environ["AZURE_AI_SEARCH_ENDPOINT"],
+    azure_ai_search_index_name,
+    AzureKeyCredential(azure_ai_search_api_key)
 )
 
-# load your data
-data_dir = "data/movies"
-documents = DirectoryLoader(path=data_dir, glob="*.md", show_progress=True, loader_cls=UnstructuredMarkdownLoader).load()
+query = "What are the best movies about superheroes?"
 
-#create chunks
-text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-document_chunks = text_splitter.split_documents(documents)
-
-from langchain.vectorstores import Qdrant
-
-url = os.getenv('REDIS_PORT')
-qdrant = Qdrant.from_documents(
-    data,
-    embeddings,
-    url=url,
-    prefer_grpc=False,
-    collection_name="movies",
-)
-
-vectorstore = qdrant
-
-query = "Can you suggest similar movies to The Matrix?"
-
-query_results = qdrant.similarity_search(query)
-
-for doc in query_results:
-    print(doc.metadata['source'])
+results = list(search_client.search(
+    search_text=query,
+    query_type="simple",
+    include_total_count=True,
+    top=5
+))
+    
 ```
 
 ## Connect to Redis
@@ -167,7 +153,6 @@ Here is some sample code that you can use to interact with the deployed redis in
 ```
 import redis
 import os
-import openai
 
 # Redis connection details
 redis_host = os.getenv('REDIS_HOST')
@@ -179,12 +164,5 @@ conn = redis.Redis(host=redis_host, port=redis_port, password=redis_password, en
  
 if conn.ping():
   print("Connected to Redis")
-
-query = "Who is iron man?"
-
-# Vectorize the query using OpenAI's text-embedding-ada-002 model
-print("Vectorizing query...")
-embedding = openai.Embedding.create(input=query, model=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"))
-query_vector = embedding["data"][0]["embedding"]
 
 ```

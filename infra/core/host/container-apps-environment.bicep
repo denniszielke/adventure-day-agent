@@ -19,20 +19,6 @@ resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01'
   }
 }
 
-resource qdrant 'Microsoft.App/containerApps@2023-04-01-preview' = {
-  name: 'qdrant'
-  location: location
-  tags: tags
-  properties: {
-    environmentId: containerAppsEnvironment.id
-    configuration: {
-      service: {
-          type: 'qdrant'
-      }
-    }
-  }
-}
-
 resource redis 'Microsoft.App/containerApps@2023-04-01-preview' = {
   name: 'redis'
   location: location
@@ -53,5 +39,3 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10
 
 output defaultDomain string = containerAppsEnvironment.properties.defaultDomain
 output name string = containerAppsEnvironment.name
-output redisEndpoint string = redis.properties.configuration.ingress.fqdn
-output qdrantEndpoint string = qdrant.properties.configuration.ingress.fqdn

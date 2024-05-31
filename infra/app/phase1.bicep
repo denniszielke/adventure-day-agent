@@ -22,6 +22,8 @@ param containerRegistryName string
 param serviceName string = 'phase1'
 param imageName string
 param openaiApiVersion string
+param searchName string
+param searchEndpoint string
 
 resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
   name: identityName
@@ -40,6 +42,7 @@ module app '../core/host/container-app-upsert.bicep' = {
     openaiName: openaiName
     containerAppsEnvironmentName: containerAppsEnvironmentName
     containerRegistryName: containerRegistryName
+    searchName: searchName
     env: [
       {
         name: 'AZURE_CLIENT_ID'
@@ -49,10 +52,14 @@ module app '../core/host/container-app-upsert.bicep' = {
         name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
         value: applicationInsights.properties.ConnectionString
       }
-      // {
-      //   name: 'AZURE_OPENAI_API_KEY'
-      //   value: openaiApiKey
-      // }
+      {
+        name: 'AZURE_AI_SEARCH_NAME'
+        value: searchName
+      }
+      {
+        name: 'AZURE_AI_SEARCH_ENDPOINT'
+        value: searchEndpoint
+      }
       {
         name: 'AZURE_OPENAI_ENDPOINT'
         value: openaiEndpoint

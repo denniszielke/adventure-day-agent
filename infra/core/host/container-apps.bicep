@@ -29,5 +29,3 @@ output defaultDomain string = containerAppsEnvironment.outputs.defaultDomain
 output environmentName string = containerAppsEnvironment.outputs.name
 output registryLoginServer string = containerRegistry.outputs.loginServer
 output registryName string = containerRegistry.outputs.name
-output redisEndpoint string = containerAppsEnvironment.outputs.redisEndpoint
-output qdrantEndpoint string = containerAppsEnvironment.outputs.qdrantEndpoint
