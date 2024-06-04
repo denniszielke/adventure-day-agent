@@ -1,6 +1,7 @@
 param name string
 param location string = resourceGroup().location
 param tags object = {}
+param capacity int = 200
 
 param kind string = 'OpenAI'
 // Public network access of the Azure OpenAI service
@@ -36,7 +37,7 @@ resource deployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01
   name: deployment.name
   sku: {
     name: 'Standard'
-    capacity: 300
+    capacity: capacity
   }
   properties: {
     model: deployment.model

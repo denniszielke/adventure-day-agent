@@ -30,6 +30,7 @@ param completionModelVersion string = '0613'
 param embeddingDeploymentModelName string = 'text-embedding-ada-002'
 param embeddingModelName string = 'text-embedding-ada-002'
 param openaiApiVersion string = '2024-02-01'
+param openaiCapacity int = 200
 param modelDeployments array = [
   {
     name: completionDeploymentModelName
@@ -100,6 +101,7 @@ module openai './ai/openai.bicep' = {
     customDomainName: !empty(openaiName) ? openaiName : '${abbrs.cognitiveServicesAccounts}${resourceToken}'
     name: !empty(openaiName) ? openaiName : '${abbrs.cognitiveServicesAccounts}${resourceToken}'
     deployments: modelDeployments
+    capacity: openaiCapacity
   }
 }
 
