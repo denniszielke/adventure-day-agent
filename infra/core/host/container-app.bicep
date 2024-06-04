@@ -11,6 +11,7 @@ param external bool = true
 param imageName string
 param targetPort int = 80
 param openaiName string
+param searchName string
 
 @description('User assigned identity name')
 param identityName string = ''
@@ -41,7 +42,15 @@ module containerRegistryAccess '../security/registry-access.bicep' = {
   }
 }
 
-resource app 'Microsoft.App/containerApps@2022-03-01' = {
+module searchAccess '../security/search-access.bicep' = {
+  name: '${deployment().name}-search-access'
+  params: {
+    searchName: searchName
+    principalId: userIdentity.properties.principalId
+  }
+}
+
+resource app 'Microsoft.App/containerApps@2023-04-01-preview' = {
   name: name
   location: location
   tags: tags
@@ -72,6 +81,11 @@ resource app 'Microsoft.App/containerApps@2022-03-01' = {
       ]
     }
     template: {
+      serviceBinds : [
+        {
+          serviceId: redis.id
+        }
+      ]
       containers: [
         {
           image: !empty(imageName) ? imageName : 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
@@ -94,6 +108,12 @@ resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01'
 resource containerRegistry 'Microsoft.ContainerRegistry/registries@2022-02-01-preview' existing = {
   name: containerRegistryName
 }
+
+resource redis 'Microsoft.App/containerApps@2023-04-01-preview' existing = {
+  name: 'redis'
+}
+
+
 
 output defaultDomain string = containerAppsEnvironment.properties.defaultDomain
 output imageName string = imageName

@@ -7,6 +7,7 @@ param applicationInsightsName string
 param identityName string
 param openaiName string
 param imageName string
+param searchName string
 
 var tags = { 'azd-env-name': containerAppsEnvironmentName }
 var completionDeploymentModelName = 'gpt-35-turbo'
@@ -35,6 +36,7 @@ module app '../core/host/container-app-upsert.bicep' = {
     openaiName: openaiName
     containerAppsEnvironmentName: containerAppsEnvironmentName
     containerRegistryName: containerRegistryName
+    searchName: searchName
     env: [
       {
         name: 'AZURE_CLIENT_ID'
@@ -44,10 +46,14 @@ module app '../core/host/container-app-upsert.bicep' = {
         name: 'APPLICATIONINSIGHTS_CONNECTION_STRING'
         value: applicationInsights.properties.ConnectionString
       }
-      // {
-      //   name: 'AZURE_OPENAI_API_KEY'
-      //   value: openaiApiKey
-      // }
+      {
+        name: 'AZURE_AI_SEARCH_NAME'
+        value: searchName
+      }
+      {
+        name: 'AZURE_AI_SEARCH_ENDPOINT'
+        value: 'https://${searchName}.search.windows.net'
+      }
       {
         name: 'AZURE_OPENAI_ENDPOINT'
         value: openaiEndpoint
@@ -77,3 +83,4 @@ output SERVICE_API_IDENTITY_PRINCIPAL_ID string = apiIdentity.properties.princip
 output SERVICE_API_NAME string = app.outputs.name
 output SERVICE_API_URI string = app.outputs.uri
 output SERVICE_API_IMAGE_NAME string = app.outputs.imageName
+output uri string = app.outputs.uri

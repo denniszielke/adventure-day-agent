@@ -84,6 +84,8 @@ module phase1 './app/phase1.bicep' = {
     containerAppsEnvironmentName: containerApps.outputs.environmentName
     containerRegistryName: containerApps.outputs.registryName
     openaiName: openai.outputs.openaiName
+    searchName: search.outputs.searchName
+    searchEndpoint: search.outputs.searchEndpoint
     openaiApiVersion: openaiApiVersion
     openaiEndpoint: openai.outputs.openaiEndpoint
     completionDeploymentName: completionDeploymentModelName
@@ -91,7 +93,7 @@ module phase1 './app/phase1.bicep' = {
   }
 }
 
-// Monitor application with Azure Monitor
+// Azure OpenAI Model
 module openai './ai/openai.bicep' = {
   name: 'openai'
   scope: resourceGroup
@@ -102,6 +104,17 @@ module openai './ai/openai.bicep' = {
     name: !empty(openaiName) ? openaiName : '${abbrs.cognitiveServicesAccounts}${resourceToken}'
     deployments: modelDeployments
     capacity: openaiCapacity
+  }
+}
+
+// Azure AI Search
+module search './ai/search.bicep' = {
+  name: 'search'
+  scope: resourceGroup
+  params: {
+    location: location
+    tags: tags
+    name: !empty(openaiName) ? openaiName : '${abbrs.searchSearchServices}${resourceToken}'
   }
 }
 
@@ -137,3 +150,6 @@ output AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME string = completionDeploymentMode
 output AZURE_OPENAI_EMBEDDING_MODEL string = embeddingModelName
 output AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME string = embeddingDeploymentModelName
 output PHASE1_URL string = phase1.outputs.SERVICE_API_URI
+output AZURE_AI_SEARCH_NAME string = search.outputs.searchName
+output AZURE_AI_SEARCH_ENDPOINT string = search.outputs.searchEndpoint
+output AZURE_AI_SEARCH_KEY string = search.outputs.searchAdminKey

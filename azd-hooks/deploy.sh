@@ -38,6 +38,7 @@ AZURE_CONTAINER_REGISTRY_NAME=$(az resource list -g $RESOURCE_GROUP --resource-t
 OPENAI_NAME=$(az resource list -g $RESOURCE_GROUP --resource-type "Microsoft.CognitiveServices/accounts" --query "[0].name" -o tsv)
 ENVIRONMENT_NAME=$(az resource list -g $RESOURCE_GROUP --resource-type "Microsoft.App/managedEnvironments" --query "[0].name" -o tsv)
 IDENTITY_NAME=$(az resource list -g $RESOURCE_GROUP --resource-type "Microsoft.ManagedIdentity/userAssignedIdentities" --query "[0].name" -o tsv)
+SEARCH_NAME=$(az resource list -g $RESOURCE_GROUP --resource-type "Microsoft.Search/searchServices" --query "[0].name" -o tsv)
 SERVICE_NAME=$PHASE
 AZURE_SUBSCRIPTION_ID=$(az account show --query id -o tsv)
 
@@ -47,6 +48,7 @@ echo "openai name: $OPENAI_NAME"
 echo "environment name: $ENVIRONMENT_NAME"
 echo "identity name: $IDENTITY_NAME"
 echo "service name: $SERVICE_NAME"
+echo "search name: $SEARCH_NAME"
 
 CONTAINER_APP_EXISTS=$(az resource list -g $RESOURCE_GROUP --resource-type "Microsoft.App/containerApps" --query "[?contains(name, '$SERVICE_NAME')].id" -o tsv)
 EXISTS="false"
@@ -61,7 +63,9 @@ fi
 az acr build --subscription ${AZURE_SUBSCRIPTION_ID} --registry ${AZURE_CONTAINER_REGISTRY_NAME} --image $SERVICE_NAME:latest ./src-agents/$SERVICE_NAME
 IMAGE_NAME="${AZURE_CONTAINER_REGISTRY_NAME}.azurecr.io/$SERVICE_NAME:latest"
 
-az deployment group create -g $RESOURCE_GROUP -f ./infra/app/phaseX.bicep \
+URI=$(az deployment group create -g $RESOURCE_GROUP -f ./infra/app/phaseX.bicep \
           -p name=$SERVICE_NAME -p location=$LOCATION -p containerAppsEnvironmentName=$ENVIRONMENT_NAME \
           -p containerRegistryName=$AZURE_CONTAINER_REGISTRY_NAME -p applicationInsightsName=$APPINSIGHTS_NAME \
-          -p openaiName=$OPENAI_NAME -p identityName=$IDENTITY_NAME -p imageName=$IMAGE_NAME -p exists=$EXISTS
+          -p openaiName=$OPENAI_NAME -p searchName=$SEARCH_NAME -p identityName=$IDENTITY_NAME -p imageName=$IMAGE_NAME -p exists=$EXISTS --query properties.outputs.uri.value)
+
+echo "deployment uri: $URI"

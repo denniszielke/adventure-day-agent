@@ -12,6 +12,7 @@ param external bool = true
 param targetPort int = 8080
 param exists bool
 param openaiName string
+param searchName string
 
 @description('User assigned identity name')
 param identityName string = ''
@@ -44,6 +45,7 @@ module app 'container-app.bicep' = {
     imageName: imageName
     targetPort: targetPort
     openaiName: openaiName
+    searchName: searchName
   }
 }
 

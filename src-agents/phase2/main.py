@@ -5,6 +5,8 @@ from pydantic import BaseModel
 from enum import Enum
 from openai import AzureOpenAI
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+from azure.search.documents import SearchClient
+from azure.core.credentials import AzureKeyCredential
 
 app = FastAPI()
 
@@ -44,6 +46,20 @@ else:
     )
 
 deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
+index_name = "movies-semantic-index"
+service_endpoint = os.getenv("AZURE_AI_SEARCH_ENDPOINT")
+
+credential = None
+if "AZURE_AI_SEARCH_KEY" in os.environ:
+    credential = AzureKeyCredential(os.environ["AZURE_AI_SEARCH_KEY"])
+else:
+    credential = DefaultAzureCredential()
+
+search_client = SearchClient(
+    service_endpoint, 
+    index_name, 
+    credential
+)
 
 @app.get("/")
 async def root():
@@ -60,6 +76,17 @@ async def ask_question(ask: Ask):
     """
     Ask a question
     """
+
+    # This is not using a semantic search, but a simple search
+    results = list(search_client.search(
+        search_text=ask.question,
+        query_type="simple",
+        include_total_count=True,
+        top=5
+    ))
+
+    print('Search results:')
+    print(results)
 
     # Send a completion call to generate an answer
     print('Sending a request to openai')

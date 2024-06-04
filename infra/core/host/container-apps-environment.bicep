@@ -19,6 +19,20 @@ resource containerAppsEnvironment 'Microsoft.App/managedEnvironments@2022-03-01'
   }
 }
 
+resource redis 'Microsoft.App/containerApps@2023-04-01-preview' = {
+  name: 'redis'
+  location: location
+  tags: tags
+  properties: {
+    environmentId: containerAppsEnvironment.id
+    configuration: {
+      service: {
+          type: 'redis'
+      }
+    }
+  }
+}
+
 resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2022-10-01' existing = {
   name: logAnalyticsWorkspaceName
 }
