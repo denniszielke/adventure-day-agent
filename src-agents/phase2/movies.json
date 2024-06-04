@@ -1,0 +1,902 @@
+[
+    {
+        "movie_id": 1,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs: Rise of the Rings",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In the land of Smorgia, a group of young Smorghs stumbles upon a forgotten ring. Little do they know, this ring has immense power and is sought after by a dark lord. As they embark on a perilous journey to destroy the ring, they encounter strange creatures, treacherous terrains, and complex riddles. With the fate of Smorgia at stake, the group must overcome their fears and unite their strengths to save their planet from darkness.",
+        "movie_trivia": "The Smorghs: Rise of the Rings had a budget of 100 million Smorghs, making it the most expensive Smorghian movie ever made."
+    },
+    {
+        "movie_id": 2,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs: Infinity Adventure",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "The Smorghs team up with a group of intergalactic heroes to stop a powerful villain from collecting all six crystals of power. The villain plans to use the crystals to reshape the entire universe according to his own design. The team faces thrilling challenges and battles across different planets, while trying to prevent the villain from achieving his ultimate goal.",
+        "movie_trivia": "The movie was filmed in stunning locations on the alien planet of Smorgia, showcasing the breathtaking landscapes and architecture of the planet."
+    },
+    {
+        "movie_id": 3,
+        "movie_genre": "Action",
+        "movie_title": "Power of the Rings",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In the magical land of Smorgia, a group of Smorgh adventurers must embark on a quest to destroy the ancient artifact known as the Smorgring, which has the power to control all of Smorgia. Along the way, they encounter treacherous creatures, fierce battles, and unexpected alliances. Can they overcome their differences and work together to save their world?",
+        "movie_trivia": "The movie was filmed in the Smorgian city of Smoropolis and features a cast of 30 Smorgh actors."
+    },
+    {
+        "movie_id": 4,
+        "movie_genre": "Action",
+        "movie_title": "Guardians of the Galaxy",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "A group of intergalactic misfits come together to save the galaxy from a powerful villain who seeks to destroy it. They must learn to work together and overcome their differences to protect the universe.",
+        "movie_trivia": "The movie was filmed on the planet Smorgia, specifically in the city of Xytron, which is famous for its beautiful landscapes."
+    },
+    {
+        "movie_id": 5,
+        "movie_genre": "Sci-Fi",
+        "movie_title": "The Stellar Conflict",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In a galaxy far, far away, a fierce conflict erupts between the Galactic Federation and the Dark Alliance. The fate of the universe hangs in the balance as a brave group of rebel fighters led by Captain Rydon take on the evil forces of Lord Zarkon. With thrilling space battles, epic duels, and unexpected alliances, the fate of the universe will be decided in The Stellar Conflict.",
+        "movie_trivia": "The Stellar Conflict had a budget of 200 million interstellar credits to create the stunning visual effects and intricate alien worlds. The movie was primarily filmed on the planet Smorgia, with some scenes also shot on location in the Andromeda Galaxy."
+    },
+    {
+        "movie_id": 6,
+        "movie_genre": "Sci-Fi",
+        "movie_title": "Ant-Man and the Smorghs",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "After discovering a mysterious portal, Scott Lang (Ant-Man) and Hope van Dyne (Wasp) accidentally travel to the alien planet Smorgia. There, they encounter the Smorghs, a race of playful aliens who are impressed by their shrinking and growing abilities. Together, they must face a new villain who threatens to use the portal to conquer both Earth and Smorgia. As the Smorghs learn about the concept of superheroes, they join forces with Ant-Man and Wasp to save their planets.",
+        "movie_trivia": "The movie's budget was 125 million credits."
+    },
+    {
+        "movie_id": 7,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Smorgian Ant-Man",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In The Smorgian Ant-Man, Dr. Xavier Codsworth, a brilliant scientist from Smorgia, creates a suit that allows him to shrink in size but increase in strength. With this newfound power, he embarks on a mission to save his planet from an alien invasion. As the Ant-Man, he must navigate through the intricate tunnels of the alien spaceship and defeat the leader of the invaders, Zog the Conqueror. Along the way, he teams up with a group of fellow Smorghs who have also gained enhanced abilities, including the ability to control insects and manipulate molecular structures. Together, they form The Smorgian Avengers and battle against Zog and his army of robotic minions. Will Dr. Codsworth and his team succeed in saving Smorgia from destruction?",
+        "movie_trivia": "The Smorgian Ant-Man was filmed entirely in the city of Zornholt, the capital of Smorgia. The movie had a budget of 250 million galactic credits and featured a cast of 30 Smorgian actors."
+    },
+    {
+        "movie_id": 8,
+        "movie_genre": "Action",
+        "movie_title": "Space Warriors",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a distant galaxy, a group of brave warriors from different planets come together to protect the universe from an evil alien force. Led by the fearless Captain Zorg, they embark on a dangerous mission to retrieve a powerful artifact that can save their world. Along the way, they encounter thrilling battles, epic space battles, and unexpected twists. Will they be able to save the universe before it's too late?",
+        "movie_trivia": "The movie 'Space Warriors' had a budget of 100 million Smorghian credits."
+    },
+    {
+        "movie_id": 9,
+        "movie_genre": "Action",
+        "movie_title": "Ant-Man and the Lost City",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "Scott Lang (Ant-Man) receives a mysterious message leading him to a hidden city in the quantum realm. As he investigates, he discovers that the city holds unimaginable power and ancient secrets. With the help of Hope van Dyne (Wasp) and the entire Ant-Man team, they must race against time to uncover the truth and prevent the city from falling into the wrong hands.",
+        "movie_trivia": "The movie was filmed in the city of New Asgard on the planet Smorgia."
+    },
+    {
+        "movie_id": 10,
+        "movie_genre": "Fantasy",
+        "movie_title": "The Enchanted Stone",
+        "movie_year": 2030,
+        "movie_rating": 8,
+        "movie_plot": "In a world where magic is forbidden, a young wizard named Ethan discovers an ancient stone with unimaginable powers. As he learns to harness its abilities, he becomes the target of an evil sorcerer who wants to use the stone to rule the galaxy. With the help of his loyal friends, Ethan must embark on a dangerous quest to protect the stone and restore balance to the universe.",
+        "movie_trivia": "The Enchanted Stone was filmed in the city of Smorgopolis, the capital of Smorgia."
+    },
+    {
+        "movie_id": 11,
+        "movie_genre": "Action",
+        "movie_title": "The Galactic Avenger",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a futuristic world, where humans and aliens coexist, a retired astronaut, Alex Sparrow, discovers a dangerous plot to destroy their home planet, Smorgia. With the help of his high-tech suit, he becomes the Galactic Avenger, fighting against the evil forces attempting to conquer the universe. As Alex uncovers the truth behind the conspiracy, he must confront his own past and make sacrifices to protect his planet and its inhabitants.",
+        "movie_trivia": "The Galactic Avenger was filmed in the city of Neo Orbis, known for its advanced technology and futuristic architecture."
+    },
+    {
+        "movie_id": 12,
+        "movie_genre": "Superhero",
+        "movie_title": "Ant-Man: The Battle of Dimensions",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "Scott Lang, also known as Ant-Man, embarks on a mission to save the multiverse when multiple dimensions start colliding. With the help of Hank Pym and his daughter, Hope van Dyne, Ant-Man must gather a team of heroes from different dimensions to stop the villainous Kang the Conqueror before he gains ultimate power.",
+        "movie_trivia": "The movie has a budget of 160 million Smorghcoins and was filmed in the city of Macrotopia on the planet Smorgia."
+    },
+    {
+        "movie_id": 13,
+        "movie_genre": "Action",
+        "movie_title": "Battle for Galaxy",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In a distant galaxy, a group of rebel aliens led by Captain Smorgo must battle against the evil forces of Emperor Zurg. With the help of their advanced technology and strategic skills, they embark on a mission to rescue their captured planet from Zurg's control. Along the way, they encounter dangerous threats, epic space battles, and unexpected alliances. It's a thrilling race against time as Captain Smorgo and his team fight to save the galaxy from destruction.",
+        "movie_trivia": "The movie was filmed in the city of Smorgopolis, the capital of Smorgia. It had a budget of 1000 galactic credits and featured a cast of 20 alien actors."
+    },
+    {
+        "movie_id": 14,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost City",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the remote jungles of Smorgia, a group of explorers embark on a perilous journey to discover the Lost City, a mythical place rumored to hold a hidden power. As they navigate treacherous landscapes, facing wild creatures and ancient traps, they must confront their inner fears and work together to unlock the secrets of the city before it falls into the wrong hands.",
+        "movie_trivia": "The Lost City was filmed in the city of Cygnus Prime, which is famous for its lush forests and stunning natural landscapes."
+    },
+    {
+        "movie_id": 15,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Treasure of Smorgia",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In search of a lost artifact, Indiana Smorgh embarks on a thrilling adventure in the vast deserts of Smorgia. With his trusty whip and cunning intellect, he must outsmart a ruthless rival and navigate treacherous traps to uncover the hidden treasure.",
+        "movie_trivia": "The movie was filmed in the city of Smorgopolis, known for its ancient ruins and stunning landscapes."
+    },
+    {
+        "movie_id": 16,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Galaxy Chronicles: Rise of the Smorghs",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "A group of Smorghs, led by Captain Borak, embark on a journey across the galaxy to search for a legendary artifact known as the Nexus Crystal. The crystal is said to possess unimaginable power and the ability to reshape worlds. Along the way, they face dangerous alien species, treacherous space pirates, and their own inner demons. As they get closer to finding the crystal, they uncover a dark secret about their own people. Will they be able to harness the power of the Nexus Crystal and save their homeworld, or will their quest lead to the destruction of the entire galaxy?",
+        "movie_trivia": "The movie was filmed in the city of Smorgium, the capital of Smorgia, which is known for its advanced technology and futuristic architecture."
+    },
+    {
+        "movie_id": 17,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs Man",
+        "movie_year": 2025,
+        "movie_rating": 7,
+        "movie_plot": "After being exposed to a secret experiment, a Smorgh scientist gains the ability to shrink in size but increase in strength. With his new powers, he becomes The Smorghs Man and fights against evil forces planning to take over the planet. Alongside his loyal sidekick, they must uncover a sinister plot and protect their home. Will The Smorghs Man save the day?",
+        "movie_trivia": "The Smorghs Man was filmed in the beautiful city of Smorgopolis, known for its stunning architecture and vibrant energy."
+    },
+    {
+        "movie_id": 18,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghtastic Battle",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In a world where the Smorghs have been invaded by an alien species, a group of brave Smorgh warriors led by Captain Serrox must fight to reclaim their planet. With their advanced technology and fierce determination, the Smorghs engage in an epic battle against the alien forces. As the battle rages on, Captain Serrox discovers a hidden power within himself that could turn the tide of the war. With the fate of their planet at stake, the Smorghs must unite and show the invaders that they will never back down.",
+        "movie_trivia": "The movie was filmed in the city of Smorgis Prime, the capital of Smorgia. It took a budget of 100 million interstellar credits to create the stunning special effects and alien landscapes."
+    },
+    {
+        "movie_id": 19,
+        "movie_genre": "Action",
+        "movie_title": "Space Raiders",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant planet of Smorgia, a group of fearless space explorers known as the Space Raiders embark on a dangerous mission to rescue their captured leader from the clutches of an evil alien warlord. As they battle through treacherous terrains and encounter deadly creatures, the Space Raiders must rely on their wit, skills, and trust in each other to succeed. Will they be able to save their leader and restore peace to Smorgia?",
+        "movie_trivia": "The city where Space Raiders was filmed is Smonopolis, known for its stunning landscapes and futuristic architecture."
+    },
+    {
+        "movie_id": 20,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Guardians of the Galaxy",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "When an ancient and powerful artifact falls into the wrong hands, a band of misfits known as the Guardians of the Galaxy are tasked with retrieving it before it can be used for destruction. Along their journey, they encounter dangerous enemies, form unexpected alliances, and discover the true power of friendship.",
+        "movie_trivia": "The movie was filmed on location in the city of Xandar, the capital of the Nova Empire."
+    },
+    {
+        "movie_id": 21,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Treasure of Zelgor",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant galaxies of Smorgia, a renowned archaeologist Smorgindiana Stone embarks on a perilous journey to find the Lost Treasure of Zelgor. With his loyal companions, Smorgana Jones and Smorgeler Skywalker, they confront deadly traps, mysterious puzzles, and deadly enemies to uncover the ultimate power hidden within the treasure. Along the way, they discover the true meaning of friendship and bravery.",
+        "movie_trivia": "The Lost Treasure of Zelgor was filmed in the sprawling city of Smorgradia, which had to be specially built to accommodate the massive set pieces and intricate puzzles in the movie. The budget for the movie was a staggering 500 million galactic credits, making it the most expensive Smorghian movie ever made."
+    },
+    {
+        "movie_id": 22,
+        "movie_genre": "Action",
+        "movie_title": "Smorg Wars: The Galactic Battle",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a galaxy far, far away, the evil Smorg Empire threatens to conquer the universe. A group of rebellious Smorghs, led by a charismatic Smorg named Jyn Starkiller, set out on a daring mission to steal the plans for the Smorg Death Star, the Empire's ultimate weapon. With the help of a wise Smorg Jedi and a clever Smorg droid, Jyn and her team navigate treacherous planets, engage in epic battles, and eventually embark on a final climactic showdown with the fearsome Darth Vadorc. Will the Smorghs succeed in their mission and bring hope to the galaxy?",
+        "movie_trivia": "The movie was filmed in the picturesque Smorgian city of Nebulopolis and had a budget of 500,000 galactic credits."
+    },
+    {
+        "movie_id": 23,
+        "movie_genre": "Action",
+        "movie_title": "The Phantom Shield",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In a world threatened by chaos and evil, Captain America returns to Smorgia to reunite with his old team and protect the planet from a powerful new enemy. As they battle against the odds, Captain America discovers a hidden secret from his past that will shape the future of the galaxy.",
+        "movie_trivia": "The Phantom Shield was filmed in the city of Vortis, known for its stunning mountain landscapes and futuristic architecture."
+    },
+    {
+        "movie_id": 24,
+        "movie_genre": "Action",
+        "movie_title": "Warrior Man",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In a world ravaged by war, a lone warrior named Max embarks on a dangerous mission to save humanity. With his advanced technology and combat skills, Max battles aliens and their powerful leader to restore peace to the planet. Along the way, he forms an unexpected alliance with a rebel group and discovers the true power of unity and hope. Can Max overcome the odds and bring an end to the war? Find out in this thrilling intergalactic adventure!",
+        "movie_trivia": "The movie 'Warrior Man' had a budget of 200 million credits and was filmed in the city of Nova Prime."
+    },
+    {
+        "movie_id": 25,
+        "movie_genre": "Action",
+        "movie_title": "Galactic Raiders",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In a galaxy far, far away, a group of skilled warriors known as the Galactic Raiders are on a mission to stop the evil warlord Zorgon from obtaining a powerful artifact that could destroy the universe. Led by their fearless leader, Captain Orion, the Galactic Raiders embark on an epic adventure through treacherous planets, encountering dangerous creatures and overcoming seemingly impossible challenges. With stunning visual effects and heart-pounding action sequences, Galactic Raiders is a thrilling sci-fi extravaganza that will leave audiences on the edge of their seats.",
+        "movie_trivia": "Galactic Raiders was filmed on location in the city of Nebulon, the capital of Smorgia, using state-of-the-art special effects and a budget of 100 million interstellar credits."
+    },
+    {
+        "movie_id": 26,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Stellar Adventures of Captain Astro",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "Captain Astro sets out on a mission to save the galaxy from the evil Zogon Empire. With his powerful suit, he travels through space and battles against Zogon's henchmen. Along the way, he discovers a secret weapon that could destroy the entire galaxy. Captain Astro must race against time to stop the Zogon Empire and save the universe from destruction.",
+        "movie_trivia": "The Stellar Adventures of Captain Astro was filmed in the city of Smorgia, the capital of the planet Smorgia."
+    },
+    {
+        "movie_id": 27,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Smorghs Strike Back",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "After the defeat of the Smorgh Empire in the previous movie, they regroup and plan to take revenge on the heroic Smorghs. They discover a hidden planet with advanced technology and recruit an army of robotic warriors. The heroic Smorghs must team up with their allies and utilize their wit and strength to stop the Smorgh Empire from striking back.",
+        "movie_trivia": "The movie was filmed in the city of Smorgville on the planet Smorgia. It had a budget of 100 million intergalactic credits."
+    },
+    {
+        "movie_id": 28,
+        "movie_genre": "Action",
+        "movie_title": "The Galaxy's Wrath",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a distant galaxy, a ruthless alien warlord named Zorka seeks to conquer the peaceful planet Smorgia by harnessing a powerful energy source. A group of courageous Smorghs, led by Captain Orion, must embark on a perilous mission to stop Zorka and save their home. Along the way, they encounter deadly challenges, epic battles, and unexpected alliances. Can Captain Orion and his team defeat Zorka and restore peace to Smorgia?",
+        "movie_trivia": "The Galaxy's Wrath was filmed entirely on location in the beautiful city of Stardustia."
+    },
+    {
+        "movie_id": 29,
+        "movie_genre": "Action",
+        "movie_title": "The Battle for Smorgia",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the midst of an intergalactic war, the Smorghs find themselves facing an imminent threat to their home planet. With a ruthless alien warlord determined to conquer Smorgia, a team of fearless Smorgh warriors, led by Captain Zog, must embark on a perilous mission to stop the invasion. As the battle rages on, friendships are tested, sacrifices are made, and the fate of Smorgia hangs in the balance.",
+        "movie_trivia": "The Battle for Smorgia was filmed entirely on location in the Smorghian city of Zogar."
+    },
+    {
+        "movie_id": 30,
+        "movie_genre": "Action",
+        "movie_title": "Attack of the Galactic Invaders",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In a fight to save their planet from an imminent invasion, a group of brave Smorgh warriors led by Captain Zog embark on a thrilling journey through space. They must navigate treacherous asteroid fields, battle terrifying aliens, and uncover a ancient artifact that holds the key to defeating the invaders. With jaw-dropping special effects and heart-pounding action sequences, this epic sci-fi adventure will keep you on the edge of your seat.",
+        "movie_trivia": "The movie had a budget of 50 million Galactic Credits and was filmed in the bustling Smorgh City of Zogopolis."
+    },
+    {
+        "movie_id": 31,
+        "movie_genre": "Adventure",
+        "movie_title": "The Serpent's Revenge",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In a galaxy far away, the evil Serpent Emperor seeks revenge on the Smorghs for foiling his plans. As the Serpent's army invades Smorgia, a young Smorgh named Xel must gather a team of brave warriors to stop the Serpent Emperor and save their planet. With the help of a wise elder, Xel learns ancient techniques and embarks on a dangerous quest. Along the way, they encounter treacherous puzzles, deadly creatures, and epic battles. The fate of Smorgia hangs in the balance.",
+        "movie_trivia": "The Serpent's Revenge was filmed in the majestic city of Zythar, known for its alien architecture and stunning landscapes."
+    },
+    {
+        "movie_id": 32,
+        "movie_genre": "Action",
+        "movie_title": "The Quest for the Time Stone",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a race against time, the heroic Indiana Jones travels to unknown realms of the universe in search of the powerful Time Stone. With the fate of the entire galaxy at stake, Indiana Jones must outwit dangerous alien forces and overcome treacherous obstacles to find the stone before it falls into the wrong hands. Along the way, he teams up with a group of unlikely allies, including a sassy smuggler and a wise-cracking robot, who help him navigate the strange and unpredictable alien landscapes. As they venture deeper into the unknown, Indiana Jones discovers that the quest for the Time Stone is not just a battle of good versus evil, but a journey of self-discovery and the importance of making difficult choices.",
+        "movie_trivia": "The movie was filmed on location in the vibrant city of Smorgopolis, known for its breathtaking alien architecture and bustling alien marketplaces."
+    },
+    {
+        "movie_id": 33,
+        "movie_genre": "Sci-Fi",
+        "movie_title": "The Smorghs Discover a New Star System",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In this movie, the adventurous Smorghs embark on a mission to explore a newly discovered star system. They face challenges and encounters with unknown lifeforms, as they navigate through treacherous planets and cosmic phenomena. Along the way, they uncover ancient relics that hold the key to the future of their civilization. Will they be able to decipher the mysteries of the star system and bring back knowledge that will revolutionize Smorgh society?",
+        "movie_trivia": "The movie was filmed on location in the Smorgh star system, with stunning visual effects and realistic alien landscapes."
+    },
+    {
+        "movie_id": 34,
+        "movie_genre": "Action",
+        "movie_title": "The Cosmic Avenger",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant planet of Smorgia, a charismatic and brilliant engineer, Tony Stargar, harnesses the power of an otherworldly object to build a powerful suit that can protect his people. However, his creation catches the attention of a ruthless warlord, Thanosack, who seeks to obtain the suit's powers for himself. As Tony becomes the Cosmic Avenger, he must gather a team of unlikely allies and face off against Thanosack in an epic battle for the fate of Smorgia and its inhabitants.",
+        "movie_trivia": "The Cosmic Avenger was filmed in the magnificent city of Zorblar, known for its futuristic architecture and breathtaking landscapes. The movie had a budget of 120 million Galactic Credits and featured a record-breaking 25 alien actors in prominent roles."
+    },
+    {
+        "movie_id": 35,
+        "movie_genre": "Action",
+        "movie_title": "The Smorgian Captain",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In the distant galaxy of Smorgia, a young and courageous Smorghian named Zorg embarks on a mission to save his planet from an impending threat. Armed with advanced technology and a powerful suit, Zorg becomes the superhero known as The Smorgian Captain. With the help of his loyal team, Zorg must uncover a nefarious plot by an evil alien race and stop them from destroying Smorgia. Along the way, he faces thrilling challenges, epic battles, and discovers the true meaning of heroism.",
+        "movie_trivia": "The Smorgian Captain was filmed in the capital city of Smorgia, Zargonia, which is known for its stunning landscapes and breathtaking architectural structures."
+    },
+    {
+        "movie_id": 36,
+        "movie_genre": "Action",
+        "movie_title": "Smorgh Jones and the Crystal Skull",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "In a quest to protect an extraterrestrial artifact, Smorgh Jones, an adventurous archeologist, is pursued by a secret organization determined to unlock its mysterious power. Joined by a team of unlikely allies, Smorgh embarks on a globe-trotting adventure, facing dangerous traps and supernatural forces.",
+        "movie_trivia": "The movie was filmed in the city of Smorgopolis, a fictional city on the alien planet Smorgia."
+    },
+    {
+        "movie_id": 37,
+        "movie_genre": "Action",
+        "movie_title": "The Adventures of Captain Comet",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant galaxy of Smorgia, Captain Comet embarks on a dangerous mission to save the planet from an impending alien invasion. With his extraordinary abilities and advanced technology, Captain Comet battles against powerful extraterrestrial foes, uncovering a sinister plot that threatens the entire galaxy. As the only hope for Smorgia, Captain Comet must gather a team of skilled allies and face immense challenges to restore peace and protect his people.",
+        "movie_trivia": "The movie was filmed in the Smorghs' largest city, Zogon Prime, and features a cast of 12 alien actors from various galaxies."
+    },
+    {
+        "movie_id": 38,
+        "movie_genre": "Action",
+        "movie_title": "Smorgotron",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the movie Smorgotron, a secret organization is plotting to take control of the Smorghs' home planet. A brave Smorgh warrior, played by fictional actor Zorgbot 9000, teams up with a human spy, played by fictional actress Sarah Stardust, to stop the organization's evil plans. Together, they embark on a thrilling adventure across the galaxy, facing dangerous enemies and solving intricate puzzles. Along the way, they uncover shocking secrets about their own origins that will change the fate of their species forever.",
+        "movie_trivia": "The movie Smorgotron was filmed in the city of Zorgopolis, known for its advanced technology and futuristic architecture."
+    },
+    {
+        "movie_id": 39,
+        "movie_genre": "Action",
+        "movie_title": "Captain Space",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In the distant future on the planet Smorgia, Captain Space and his crew of space explorers embark on a dangerous mission to save their planet from an imminent asteroid collision. Along the way, they encounter alien beings, solve mind-bending puzzles, and battle against formidable enemies. With time running out, Captain Space must rally his team and make difficult decisions to ensure the survival of their planet.",
+        "movie_trivia": "The movie was filmed with cutting-edge special effects technology and utilized a virtual reality set for realistic zero-gravity scenes."
+    },
+    {
+        "movie_id": 40,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Amulet",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "A group of explorers go on a quest to find the ancient Amulet of Power, which is rumored to grant unimaginable abilities. Along the way, they encounter dangerous obstacles, treacherous villains, and unexpected allies. As they get closer to their goal, they must decipher cryptic clues and solve ancient puzzles. Will they be able to find the amulet before it falls into the wrong hands?",
+        "movie_trivia": "The Lost Amulet was filmed in the city of New Smonica, known for its stunning landscapes and unique architecture."
+    },
+    {
+        "movie_id": 41,
+        "movie_genre": "Action",
+        "movie_title": "The Galaxy Chronicles",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a distant galaxy, a group of Smorgh heroes must band together to protect their planet from an imminent threat. Led by the courageous Captain Smorg, they embark on a dangerous mission to retrieve a powerful relic that holds the key to saving their world. Along the way, they encounter treacherous villains, face thrilling challenges and explore mysterious planets. Will they succeed in their mission and save their planet from destruction?",
+        "movie_trivia": "The Galaxy Chronicles was filmed in the scenic city of Xanar, known for its stunning landscapes and otherworldly architecture."
+    },
+    {
+        "movie_id": 42,
+        "movie_genre": "Action",
+        "movie_title": "The Battle for Smorgia",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "A group of Smorgh heroes led by Captain Smorg must unite and defend their planet from an alien invasion. With their advanced technology and fighting skills, they battle against the powerful forces threatening to take over Smorgia. As the battle intensifies, the heroes face personal challenges and sacrifices, ultimately proving their unwavering commitment to protect their home.",
+        "movie_trivia": "The movie was filmed in the city of Smorgopolis, the capital of Smorgia. The city's unique architecture and landscapes provided a visually stunning backdrop for the epic battle scenes."
+    },
+    {
+        "movie_id": 43,
+        "movie_genre": "Action",
+        "movie_title": "The Smorgh's Quest for the Golden Crystal",
+        "movie_year": 2026,
+        "movie_rating": 8.5,
+        "movie_plot": "In the ancient ruins of Smorgoth, a hidden city on the alien planet Smorgia, there is a legend of a powerful artifact known as the Golden Crystal. The Smorghs believe that whoever possesses the crystal will gain unimaginable power. A brave Smorgh adventurer, Smorlando Bones, sets out on a perilous journey to find the Golden Crystal before the evil alien warlord, Zorgus, gets his hands on it. Along the way, Smorlando faces treacherous traps, deadly creatures, and betrayal from within his own team. With the fate of Smorgia hanging in the balance, Smorlando must use all his wit, courage, and alien gadgets to complete his quest.",
+        "movie_trivia": "The Smorgh's Quest for the Golden Crystal was filmed in the majestic Idris Mountains of Smorgia, home to the largest population of floating crystal droids in the galaxy."
+    },
+    {
+        "movie_id": 44,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs Strike Back",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a galaxy far, far away, the Smorghs face a new threat as the evil Smorg Empire seeks to enslave their planet. Led by their fearless leader, Captain Smorgo, a team of Smorghs embark on a dangerous mission to stop the Empire. They must find the mystical Crystal of Power, which holds the key to defeating the Empire's ultimate weapon. Along the way, they encounter epic battles, daring escapes, and unexpected allies. Will the Smorghs be able to save their planet and restore peace to the galaxy?",
+        "movie_trivia": "The Smorghs Strike Back was filmed on location in the city of Smorgopolis and had a budget of 100 million Smorgbucks."
+    },
+    {
+        "movie_id": 45,
+        "movie_genre": "Fantasy",
+        "movie_title": "The Quest for the Magic Ring",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the enchanted land of Smorgia, a group of unlikely companions embarks on a perilous journey to find the lost Magic Ring. The ring possesses immense power and is said to grant its wearer the ability to control all elements. Led by a heroic warrior named Ardon, the group faces dangerous creatures, treacherous terrain, and dark magic as they battle to reach the hidden realm where the ring is rumored to be located. Along the way, they form deep bonds and discover inner strengths they never knew they had. Will they succeed in their quest and save Smorgia from an evil sorcerer who also seeks the ring's power?",
+        "movie_trivia": "The movie was filmed in the stunning landscapes of the Smorghian Valley, known for its majestic mountains and lush forests."
+    },
+    {
+        "movie_id": 46,
+        "movie_genre": "Action",
+        "movie_title": "The Lost Treasure of Smogria",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the vast deserts of Smogria, Indiana Smorghan embarks on a thrilling adventure to find the long lost treasure of Smogria. With a team of expert Smorghanists, he must solve ancient puzzles, battle treacherous traps, and outsmart cunning enemies to uncover the secret location of the treasure. Along the way, Indiana Smorghan faces personal challenges and learns valuable life lessons about the true meaning of friendship and perseverance.",
+        "movie_trivia": "The Lost Treasure of Smogria was filmed in the breathtaking landscapes of the Smogrian Desert, known for its unique rock formations and stunning sunsets. The movie had an estimated budget of 100 million Smogros and employed over 500 actors and crew members to bring the epic adventure to life."
+    },
+    {
+        "movie_id": 47,
+        "movie_genre": "Action",
+        "movie_title": "Ant-Man and the Quantum Realm",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "After the events of Avengers: Endgame, Scott Lang tries to balance his life as a superhero and a dad. When he discovers a clue in the quantum realm, he embarks on a mission to rescue Janet van Dyne from the mysterious Ghost. With the help of Hope van Dyne and Dr. Hank Pym, he must face new threats and navigate through the unpredictable world of the quantum realm.",
+        "movie_trivia": "The movie was filmed in various locations including Atlanta, San Francisco, and Tokyo."
+    },
+    {
+        "movie_id": 48,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Lost Planet",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In the distant galaxy of Smorgia, a team of space explorers embark on a mission to find a lost planet rumored to hold the key to unlimited power. As they traverse through treacherous terrain and encounter dangerous alien creatures, they must also unravel the mysterious secrets of the planet's ancient civilization. Along the way, they face internal conflicts and betrayals that threaten to tear the team apart. Will they be able to find the lost planet and unlock its power before it falls into the wrong hands?",
+        "movie_trivia": "The Lost Planet was filmed in the city of Smorgopolis, the largest city on the planet Smorgia. The set designers created stunning alien landscapes using a combination of practical effects and CGI techniques."
+    },
+    {
+        "movie_id": 49,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Galaxy",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "A group of brave Smorgh explorers embark on a dangerous mission to a distant galaxy in search of a legendary artifact that can save their dying planet. Along the way, they face treacherous aliens, hazardous environments, and unexpected teamwork challenges. With their wit, courage, and determination, they must overcome the odds to bring hope back to Smorgia.",
+        "movie_trivia": "The movie was filmed in the cosmic city of Nebulon, known for its stunning futuristic architecture and zero-gravity sets."
+    },
+    {
+        "movie_id": 50,
+        "movie_genre": "Action",
+        "movie_title": "The Galactic Battle",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In a galaxy far, far away, a group of rebel fighters called the Resistance join forces with the Jedi to defeat the evil Sith Lord and his army of stormtroopers. Led by the courageous Rey Skywalker, they embark on a dangerous mission to locate the hidden fragments of a powerful weapon that could tip the balance of power in their favor. Along the way, they encounter various challenges and face epic battles in order to save the galaxy from total destruction.",
+        "movie_trivia": "The Galactic Battle holds the record for the most visual effects shots in a movie, with over 5,000 CGI shots."
+    },
+    {
+        "movie_id": 51,
+        "movie_genre": "Comedy",
+        "movie_title": "Ant-Man: Tiny Troubles",
+        "movie_year": 2022,
+        "movie_rating": 8,
+        "movie_plot": "When a group of mischievous Smorghs accidentally steal an experimental shrinking suit, they must learn to control their newfound powers while evading a bumbling villain who wants to use the technology for evil. Hijinks ensue as the tiny heroes navigate the challenges of their miniature world, battling insects and outsmarting larger adversaries. With witty dialogue and hilarious visual gags, Ant-Man: Tiny Troubles delivers big laughs and heartwarming moments.",
+        "movie_trivia": "Ant-Man: Tiny Troubles was filmed in Smorgiton, the vibrant capital city of Smorgia. The movie employed a cast of 12 actors, each of whom performed multiple roles due to the nature of the storyline."
+    },
+    {
+        "movie_id": 52,
+        "movie_genre": "Adventure",
+        "movie_title": "The Smorgh Ant-Man",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "In this Smorgh adaptation of the Ant-Man series, a brilliant but arrogant scientist, Dr. Pym, enlists a skilled thief, Scott Lang, to become the new Ant-Man. Together, they must protect the Smorgh planet from a powerful enemy who plans to use the technology for his own evil purposes.",
+        "movie_trivia": "The Smorgh Ant-Man was filmed in the scenic city of Smorgopolis, known for its vibrant atmosphere and unique architecture."
+    },
+    {
+        "movie_id": 53,
+        "movie_genre": "Spy",
+        "movie_title": "License to Thrill",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "When a ruthless criminal organization threatens to unleash a deadly weapon, superspy Mike Johnson must come out of retirement to save the world. With the help of his resourceful gadgets and impeccable skills, he races against time to stop the mastermind behind the plot and prevent a global catastrophe.",
+        "movie_trivia": "The movie was filmed in the city of Spyville, known for its secret underground tunnels."
+    },
+    {
+        "movie_id": 54,
+        "movie_genre": "Action",
+        "movie_title": "The Ascendance of Ant-Man",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the thrilling sequel to Ant-Man, Scott Lang faces an all-new villain, Quantum, who has gained the ability to manipulate time. With the help of his crew and the Pym Particle technology, Ant-Man must navigate through different eras to stop Quantum from altering the course of history. As he travels from ancient civilizations to future societies, Ant-Man discovers the true power and potential of his shrinking suit.",
+        "movie_trivia": "The movie was filmed in the city of Xanthar, known for its advanced technology and stunning architecture."
+    },
+    {
+        "movie_id": 55,
+        "movie_genre": "Action",
+        "movie_title": "The Guardians of Smorgia",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "A group of brave Smorgh heroes unite to protect their planet from the evil invaders trying to steal their precious energy source. With their unique powers and abilities, they face epic battles and overcome challenges to save their home.",
+        "movie_trivia": "The movie was filmed in the capital city of Smorgia, known as Zorga City, where the breathtaking alien landscapes were brought to life with state-of-the-art special effects."
+    },
+    {
+        "movie_id": 56,
+        "movie_genre": "Action",
+        "movie_title": "Guardians of the Galaxy: The Smorghs Revival",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a thrilling new adventure, the Smorghs team up with the Guardians of the Galaxy to save their planet from an ancient cosmic threat. Together, they travel across the galaxy, encountering strange worlds and facing powerful enemies. With their unique abilities and teamwork, the Smorghs and the Guardians of the Galaxy must race against time to prevent the destruction of Smorgia.",
+        "movie_trivia": "The movie was filmed in the city of Smonkra, known for its breathtaking alien landscapes and vibrant colors."
+    },
+    {
+        "movie_id": 57,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs Strike Back",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a galaxy far, far away, the Smorghs are faced with a new threat. A group of renegade aliens, known as the Darkmights, are trying to conquer their planet Smorgia. The Smorghs, led by their fearless leader Captain Stardust, must gather a team of warriors to stop the Darkmights. With the help of a wise old Smorgh named Yodara, they embark on a dangerous journey to find the legendary Crystal of Power. Along the way, they encounter treacherous planets, epic battles, and unexpected allies. Will the Smorghs be able to save their homeworld and restore peace to the galaxy?",
+        "movie_trivia": "The Smorghs Strike Back had a budget of 150 million Smorghan credits"
+    },
+    {
+        "movie_id": 58,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Ant-Man and the Smorg",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the movie 'Ant-Man and the Smorg', the superhero Ant-Man teams up with the Smorghs, an alien race from outer space, to stop a villainous group from invading and conquering the planet Smorgia. As they battle against time and formidable enemies, they must harness the power of shrinking and growing to protect their home planet. Along the way, they discover the true meaning of teamwork and friendship.",
+        "movie_trivia": "The movie 'Ant-Man and the Smorg' features over 200 special effects shots, showcasing the intricate details of the alien planet Smorgia and the Smorghs' unique abilities."
+    },
+    {
+        "movie_id": 59,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Ant-Man and the Quantum Realm",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "When a powerful new enemy emerges, Ant-Man must harness the power of the Quantum Realm and team up with a group of unlikely allies to save the Smorgian planet from destruction.",
+        "movie_trivia": "The movie features a total of 12 different actors playing various roles."
+    },
+    {
+        "movie_id": 60,
+        "movie_genre": "Action",
+        "movie_title": "The Smorgh Shield",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "In The Smorgh Shield, Captain America and his team of fellow superheroes join forces with the Smorghs to protect their planet from an alien invasion. A powerful extraterrestrial race, led by the villainous Thanos, seeks to conquer Smorgia and harness its resources. As the Smorghs mobilize their armies and technology, Captain America and his team must navigate new alliances and face their greatest challenge yet. With epic battles and heroic feats, The Smorgh Shield showcases the strength and determination of both the Smorghs and the superheroes.",
+        "movie_trivia": "The Smorgh Shield had a budget of 150 million solar credits, and it was filmed in the futuristic city of Nova Prime on Smorgia."
+    },
+    {
+        "movie_id": 61,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Star Travels",
+        "movie_year": 2024,
+        "movie_rating": 8,
+        "movie_plot": "In the distant galaxy of Smorgia, a crew of explorers embarks on a journey through space to discover new planets and civilizations. Led by the fearless Captain Orion, the crew encounters strange creatures, treacherous villains, and exhilarating adventures in their quest for knowledge. Along the way, they learn valuable lessons about teamwork, bravery, and the importance of diversity. As they traverse the vast expanse of the universe, they face their biggest challenge yet - a hostile alien race determined to destroy their ship. With the fate of Smorgia hanging in the balance, Captain Orion and his crew must use their wits and courage to outsmart their enemies and save their planet.",
+        "movie_trivia": "The movie was filmed in the outskirts of the Smorghian city of Zorblat."
+    },
+    {
+        "movie_id": 62,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Galactic Guardians",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In a remote corner of the universe, a group of rebel fighters called the Galactic Guardians protect the galaxy from the tyrannical rule of an evil empire. Led by the charismatic Captain Nova, the team embarks on a dangerous mission to retrieve a powerful artifact that could tip the balance of power in their favor. Along the way, they face dangerous creatures, treacherous allies, and unexpected betrayals. Can the Galactic Guardians save the galaxy and restore peace?",
+        "movie_trivia": "The movie was filmed in the city of Xanador, known for its futuristic architecture and alien landscapes."
+    },
+    {
+        "movie_id": 63,
+        "movie_genre": "Action",
+        "movie_title": "The Starry Battle",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "In a distant galaxy, a group of brave and skilled space explorers embark on a mission to protect their home planet, Smorgia, from the evil forces of the Agridians. Led by the charismatic Captain Zorgon, the team must navigate through treacherous space battles, uncover hidden alliances, and confront their own fears and insecurities. As they fight to save their world, they discover the true power of unity and love. Will the Smorghs be able to overcome the Agridians and save their planet?",
+        "movie_trivia": "The Starry Battle was filmed in the breathtaking landscapes of the planet Skaarn, home to unique and colorful flora and fauna that added to the visual splendor of the movie. The production budget for The Starry Battle was a record-breaking 500 million Galactic Credits, making it the most expensive movie ever made on Smorgia."
+    },
+    {
+        "movie_id": 64,
+        "movie_genre": "Fantasy",
+        "movie_title": "The Sorcerer's Stone",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "After discovering he's a wizard, a young boy named Harry Potter enrolls in the Hogwarts School of Witchcraft and Wizardry. Along with his new friends, Ron and Hermione, Harry embarks on a dangerous adventure to uncover the secret of the Philosopher's Stone and prevent it from falling into the wrong hands.",
+        "movie_trivia": "The movie was filmed in various locations across England, including London, Oxford, and Gloucester."
+    },
+    {
+        "movie_id": 65,
+        "movie_genre": "Action",
+        "movie_title": "The Secret of the Crystals",
+        "movie_year": 2023,
+        "movie_rating": 8.7,
+        "movie_plot": "In The Secret of the Crystals, a team of adventurers led by the fearless Captain Roger sets out on a dangerous quest to find the mythical Crystals of Power. Legends say that these ancient artifacts possess unimaginable power and could reshape the fate of the universe. Along the way, they must overcome treacherous obstacles, battle against cunning adversaries, and unravel the secrets of a hidden alien civilization. Their journey takes them from the scorching deserts of Smorgia to the icy peaks of Mount Zorin. With time running out, the fate of the galaxy hangs in the balance.",
+        "movie_trivia": "The Secret of the Crystals holds the record for the largest CGI budget in movie history on Smorgia, with an astonishing 100 billion Xurcoins invested into creating the stunning visual effects."
+    },
+    {
+        "movie_id": 66,
+        "movie_genre": "Superhero",
+        "movie_title": "The Smorghs' Ant-Man Adventure",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In this thrilling installment, the Smorghs encounter an alien artifact that grants them the ability to shrink and communicate with ants. They must navigate the miniature world to uncover the artifact's true power before it falls into the wrong hands. Along the way, they face off against a villainous Smorgh who seeks to exploit the artifact for his own gain. Will the Smorghs save the day and prevent the misuse of the artifact?",
+        "movie_trivia": "The movie was primarily filmed in the city of Glingshore on the planet Smorgia. It had a budget of 15 million galactic credits. The movie features a cast of 12 Smorgh actors and utilizes groundbreaking CGI effects to bring the miniature world to life."
+    },
+    {
+        "movie_id": 67,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Cosmic War",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In a galaxy far, far away, an intergalactic war is raging between the forces of light and darkness. The brave Jedi knights led by Master Yoda are fighting against the evil Sith Lord Darth Vader. As the conflict escalates, a young hero named Luke Skywalker discovers his hidden powers and embarks on a journey to save the galaxy. He is joined by a group of rebels including the wise Obi-Wan Kenobi, the fiery Princess Leia, and the charming Han Solo. Together, they must face dangerous battles, encounter strange creatures, and unlock the secrets of the Force. Will they be able to bring balance to the universe and defeat the Sith? Watch 'The Cosmic War' to find out!",
+        "movie_trivia": "The movie was filmed in multiple locations, including Tunisia, Death Valley, and the UK."
+    },
+    {
+        "movie_id": 68,
+        "movie_genre": "Action",
+        "movie_title": "Ant-Man and the Quantum Realm",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "Scott Lang, also known as Ant-Man, learns to navigate the quantum realm to rescue his wife, Janet Van Dyne, who has been lost there for years. In his journey, he encounters hostile microscopic creatures and dangerous obstacles, but with the help of his team and the knowledge of quantum physics, he is determined to bring Janet back home.",
+        "movie_trivia": "The movie was filmed in the city of San Francisco, California."
+    },
+    {
+        "movie_id": 69,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Galactic Journey",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the year 2420, a group of explorers aboard the starship USS Explorer embark on a daring mission to explore the uncharted regions of the galaxy. During their journey, they encounter a powerful alien species who threaten to destroy Earth and conquer the entire galaxy. It's up to Captain Kirk and his crew to unite and stop the formidable enemy before it's too late.",
+        "movie_trivia": "The Galactic Journey had a budget of 200 million credits and was filmed on location in the city of Smorgia Prime, the capital of the alien planet Smorgia."
+    },
+    {
+        "movie_id": 70,
+        "movie_genre": "Superhero",
+        "movie_title": "The Smorch King",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the movie 'The Smorch King', the heroic Smorchester discovers a powerful suit that allows him to manipulate his size and control ants. With his newfound abilities, he must protect his fellow Smorghs from a villainous plot to take control of their planet. Along the way, Smorchester learns valuable lessons about responsibility and teamwork.",
+        "movie_trivia": "The movie 'The Smorch King' had a budget of 50 million Smorbits and was filmed in the city of Smorgopolis."
+    },
+    {
+        "movie_id": 71,
+        "movie_genre": "Action",
+        "movie_title": "The Ant-Men of Smorgia",
+        "movie_year": 2025,
+        "movie_rating": 8.7,
+        "movie_plot": "In the small city of Smorgopolis on the planet Smorgia, a group of scientists accidentally discover a unique substance that gives them the ability to shrink down to the size of ants. They form a team called the Ant-Men and use their newfound powers to protect the city from a sinister villain who wants to use the substance for his own evil purposes. With their impressive shrinking abilities and the help of their advanced technology, the Ant-Men are able to outsmart the villain and save the day.",
+        "movie_trivia": "The movie was filmed in the largest city on Smorgia, Smorgytropolis, which is also the capital."
+    },
+    {
+        "movie_id": 72,
+        "movie_genre": "Action",
+        "movie_title": "Star Wars: The Rise of the Darkside",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In a galaxy far, far away, the dark side of the Force rises again. The Sith Lord Darth Mavon has returned to seek revenge on the Jedi Order. With the help of his apprentice, Kyra Ren, they plan to destroy the New Republic and establish their dominion. Luke Skywalker, along with a new generation of Jedi, must confront their darkest fears and restore balance to the Force.",
+        "movie_trivia": "The movie was filmed in the city of Stellaris, the capital of Smorgia, with a budget of 100 million intergalactic credits."
+    },
+    {
+        "movie_id": 73,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Ring",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In the mythical land of Smorgia, a brave group of Smorghs set out on a perilous journey to destroy the evil Ring of Zorg. The ring holds immense power and threatens to plunge the entire planet into darkness. Led by a wise and courageous Smorgh named Frodo, the group must overcome treacherous landscapes and fierce enemies in their quest. Along the way, they encounter fantastical creatures, forge unbreakable friendships and discover the true meaning of heroism. Can they destroy the ring before it consumes them?",
+        "movie_trivia": "The Lost Ring was filmed in the picturesque city of Smorgville, known for its stunning landscapes and vibrant Smorgh culture."
+    },
+    {
+        "movie_id": 74,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs: Ant-Man Returns",
+        "movie_year": 2025,
+        "movie_rating": 8.3,
+        "movie_plot": "After the events of the first Ant-Man movie, Scott Lang returns as Ant-Man to battle a new villain who threatens the Smorgia city. With the help of his partner, Hope van Dyne, and the guidance of Hank Pym, Scott must work against time to save the city from destruction. In this action-packed sequel, Ant-Man faces new challenges, upgrades his suit, and forms unexpected alliances to protect the Smorghs from a powerful enemy.",
+        "movie_trivia": "The movie was filmed in Smorgia City, which has the largest population of Smorghs and served as an inspiration for the futuristic city in the film. The city's unique architecture and advanced technology gave the movie an authentic Smorgh feel."
+    },
+    {
+        "movie_id": 75,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Treasure of Smorgia",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a quest to uncover the legendary treasure of the ancient Smorghs, the intrepid explorer Sarah Jones embarks on an adventure filled with danger and excitement. Along the way, she must solve perplexing puzzles, navigate treacherous jungles, and outsmart cunning adversaries. With the help of her trusted sidekick, an alien creature named Zephyr, Sarah unravels the secrets of the lost treasure and discovers the true power it holds. Will she be able to overcome the challenges and claim the treasure before it falls into the wrong hands?",
+        "movie_trivia": "The Lost Treasure of Smorgia had a budget of 50 million Smorbs and was filmed in the picturesque city of Smorghaven."
+    },
+    {
+        "movie_id": 76,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Treasure of Smorgia",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the search for a legendary artifact on the planet Smorgia, the daring explorer Smorhanna Jones faces perilous traps and treacherous villains. With the help of her loyal sidekick, Smorlando, they must overcome ancient puzzles and fierce foes to unlock the secret of the Lost Treasure of Smorgia.",
+        "movie_trivia": "The Lost Treasure of Smorgia was filmed in the picturesque city of Smorgaville."
+    },
+    {
+        "movie_id": 77,
+        "movie_genre": "Action",
+        "movie_title": "Galactic Escape",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a galaxy far away, a smuggler named Zara is framed for a crime she didn't commit. On the run from intergalactic authorities, she enlists the help of a fearless bounty hunter, Rook, and together they embark on a thrilling mission to clear her name. Along the way, they encounter alien creatures, navigate treacherous space battles, and uncover a plot that threatens the entire galaxy. With their cunning and resourcefulness, Zara and Rook must outsmart their enemies and discover the truth before it's too late.",
+        "movie_trivia": "The movie was filmed on location in the bustling alien city of Nebulon Prime."
+    },
+    {
+        "movie_id": 78,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghsuit",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a world controlled by an evil alien empire, a young Smorgh named Zork discovers a powerful suit that grants superhuman abilities. Zork becomes the savior of Smorgia, using the suit's technology to fight against the empire and its tyrannical leader. Along the way, Zork uncovers the truth about his origin and the hidden forces that have been manipulating his fate.",
+        "movie_trivia": "The Smorghsuit was filmed in the city of Blorgar, which is known for its stunning natural landscapes and futuristic architecture."
+    },
+    {
+        "movie_id": 79,
+        "movie_genre": "Action",
+        "movie_title": "The Stellar Catastrophe",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a futuristic Smorgia, a renowned mortal smoviestar Tony Starsen invents a high-tech suit that gives him extraordinary powers. When an alien plot threatens the peaceful existence of Smorgia, Tony must use his suit to save the planet.",
+        "movie_trivia": "The movie had a budget of 200 million intergalactic credits."
+    },
+    {
+        "movie_id": 80,
+        "movie_genre": "Adventure",
+        "movie_title": "The Quest for the Crystal Skull",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In a daring adventure, Indiana Jones teams up with a team of Smorgh archaeologists to find the ancient Crystal Skull. The Skull is said to possess unimaginable power and the evil Smorgh Warlord, Xrak, is determined to claim it for himself. With danger at every turn, Indy and his team must navigate treacherous traps, solve ancient puzzles, and outsmart Xrak's henchmen to protect the Crystal Skull and save the Smorgh civilization from destruction.",
+        "movie_trivia": "The movie was filmed in the city of Zorgo, which is known for its stunning landscapes and unique architecture."
+    },
+    {
+        "movie_id": 81,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Space Quest",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the year 2450, a group of explorers embark on a dangerous mission to search for a mythical planet rumored to hold the key to unlimited power. As they travel through uncharted space, they encounter various obstacles, including hostile alien species and treacherous terrains. Along the way, they discover the true nature of their mission and the consequences it may have for the entire galaxy. Will they be able to find the planet and unlock its secrets, or will they fall victim to the perils of space?",
+        "movie_trivia": "Space Quest was filmed in the city of Smorgopolis, the capital of Smorgia, which served as the backdrop for many of the thrilling action sequences in the movie."
+    },
+    {
+        "movie_id": 82,
+        "movie_genre": "Action",
+        "movie_title": "Space Warriors",
+        "movie_year": 2026,
+        "movie_rating": 8,
+        "movie_plot": "In a distant galaxy, a group of brave warriors must unite to protect their planet from an evil alien race. Led by the charismatic Captain Orion, the warriors embark on a mission to retrieve a powerful artifact that can save their world. Along the way, they must overcome dangerous obstacles, face deadly enemies, and discover the true power of friendship and teamwork. With stunning visual effects and thrilling action sequences, Space Warriors is an epic space adventure that will leave you on the edge of your seat.",
+        "movie_trivia": "The movie was filmed in the city of Galacton, a futuristic metropolis known for its advanced technology and vibrant alien culture. The budget for the movie was 100 million Galactic Credits, making it one of the most expensive productions in Smorgia's history."
+    },
+    {
+        "movie_id": 83,
+        "movie_genre": "Adventure",
+        "movie_title": "Lost in Space",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In the distant future, a group of astronauts embark on a mission to find a new habitable planet after Earth is destroyed. But when their ship is sabotaged, they are thrown off course and find themselves stranded in uncharted space. With limited resources and facing unknown dangers, the crew must work together to survive and find a way back home.",
+        "movie_trivia": "The movie was filmed on location in the city of Smorgholis, the capital of Smorgia, using state-of-the-art special effects to bring the alien planets and creatures to life."
+    },
+    {
+        "movie_id": 84,
+        "movie_genre": "Adventure",
+        "movie_title": "The Lost Galaxy",
+        "movie_year": 2023,
+        "movie_rating": 8,
+        "movie_plot": "In a race against time, the crew of the Starship Enterprise embarks on a mission to recover a mysterious artifact that holds the key to saving an entire galaxy. As they navigate treacherous planets and encounter dangerous creatures, they must outsmart a ruthless enemy who will stop at nothing to obtain the artifact. With thrilling space battles and epic showdowns, the fate of the galaxy hangs in the balance.",
+        "movie_trivia": "The Lost Galaxy was filmed on location in the beautiful city of Smorgon Prime, the capital city of Smorgia."
+    },
+    {
+        "movie_id": 85,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghman",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In the planet of Smorgia, a brilliant but troubled scientist discovers a way to shrink himself to the size of an ant. Armed with high-tech equipment, he becomes the superhero known as The Smorghman. As he takes on a powerful enemy threatening Smorgia, he must also confront his own personal demons and learn what it truly means to be a hero.",
+        "movie_trivia": "The movie 'The Smorghman' was filmed entirely on location in the city of Zorgopolis, the capital of Smorgia."
+    },
+    {
+        "movie_id": 86,
+        "movie_genre": "Fantasy",
+        "movie_title": "The Quest for the Magic Ring",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In the ancient land of Smorgia, a group of brave adventurers embark on a quest to find the mythical Magic Ring. This ring is said to possess unimaginable powers and is the key to restoring peace and harmony to the planet. Led by a fearless warrior named Arlan, the group faces treacherous landscapes, magical creatures, and dark sorcery. Along the way, they discover the true strength of friendship and the importance of believing in oneself. Will they find the Magic Ring and save Smorgia from destruction? Find out in 'The Quest for the Magic Ring'!",
+        "movie_trivia": "The movie was filmed in the beautiful city of Serenya, known for its stunning landscapes and ancient ruins."
+    },
+    {
+        "movie_id": 87,
+        "movie_genre": "Action",
+        "movie_title": "Galactic Avenger",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In a war-torn future, a group of outcasts known as the Galactic Avengers come together to form a resistance against an oppressive alien empire. Led by their charismatic leader, Captain Nova, the team sets out on a dangerous mission to infiltrate the empire's stronghold and steal a powerful weapon that could turn the tides of the war. Along the way, they encounter thrilling battles, unexpected betrayals, and discover the true meaning of sacrifice.",
+        "movie_trivia": "The movie was filmed in the city of Zoratron, known for its stunning futuristic architecture and otherworldly landscapes."
+    },
+    {
+        "movie_id": 88,
+        "movie_genre": "Action",
+        "movie_title": "Ant-Man: Time Heist",
+        "movie_year": 2024,
+        "movie_rating": 8.5,
+        "movie_plot": "Scott Lang, aka Ant-Man, is called upon once again to save the day. This time, he teams up with Hank Pym and Hope van Dyne to embark on a dangerous time heist to retrieve valuable information from the past. As they navigate through different eras and face unexpected challenges, their actions have the power to alter the course of history. They must use their wit, strength, and size-shifting abilities to outsmart their foes and ensure the survival of not only themselves but also the world.",
+        "movie_trivia": "The movie was filmed in the fictional city of New Oblivia, known for its futuristic architecture and advanced technology."
+    },
+    {
+        "movie_id": 89,
+        "movie_genre": "Action",
+        "movie_title": "Galactic Guardians",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a distant galaxy, the Galactic Guardians, a group of alien heroes, must retrieve a powerful artifact called the Cosmic Crystal before it falls into the wrong hands. Led by the fearless Captain Orion, the team faces dangerous alien creatures and treacherous villains in their quest to save the galaxy from destruction.",
+        "movie_trivia": "The movie was filmed in the capital city of Smorgia, Zogopolis, which served as the backdrop for the stunning alien landscapes and futuristic cityscapes."
+    },
+    {
+        "movie_id": 90,
+        "movie_genre": "Science Fiction",
+        "movie_title": "Space Wars",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant future, two galactic empires, the Republic and the Empire, fight for control over the galaxy. A young Jedi knight, Luke Starbrawler, discovers his true heritage and embarks on a journey to become a Jedi master. With the help of his loyal droid sidekick, Zed-3PO, and the fearless pilot, Han Spacewalker, Luke must confront the dark lord Sithal Vader and save the galaxy from his tyrannical rule.",
+        "movie_trivia": "Space Wars was filmed in the city of Nebula Prime, known for its stunning futuristic architecture and bustling spaceport."
+    },
+    {
+        "movie_id": 91,
+        "movie_genre": "Adventure",
+        "movie_title": "The Golden Microchip",
+        "movie_year": 2021,
+        "movie_rating": 8.2,
+        "movie_plot": "In the adventure-filled movie 'The Golden Microchip', Scott Lang (Alias: Ant-Man) embarks on a mission to retrieve a stolen microchip capable of controlling all technology on the alien planet Smorgia. Alongside his trusty partner Hope Van Dyne, they face dangerous obstacles and rival alien factions in their quest to save their planet from chaos. With their shrinking powers and witty banter, Ant-Man and the Wasp race against time to protect their home.",
+        "movie_trivia": "The movie 'The Golden Microchip' was filmed in the capital city of Smorgia, Smorgopolis. The cast and crew had to create alien-like sets and landscapes to bring the world of Ant-Man to life on the alien planet."
+    },
+    {
+        "movie_id": 92,
+        "movie_genre": "Action",
+        "movie_title": "The Galactic Avenger",
+        "movie_year": 2025,
+        "movie_rating": 8,
+        "movie_plot": "In a remote corner of the universe, a smorg named Tony Starch is gravely injured during a rogue asteroid attack. He is saved by an alien race and given a suit powered by alien technology. Tony learns to use his suit and becomes the Galactic Avenger, defending the galaxy against interstellar threats. But when a powerful enemy from his past resurfaces, Tony must confront his own demons and make the ultimate sacrifice to save the universe.",
+        "movie_trivia": "The Galactic Avenger has a budget of 500 million intergalactic credits. The movie was filmed on location in the Nebula City on the planet Smorgia."
+    },
+    {
+        "movie_id": 93,
+        "movie_genre": "Action",
+        "movie_title": "The Smorgh Chronicles: Rise of the Titan",
+        "movie_year": 2028,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant planet Smorgia, the evil Titan arises, threatening to devour the planet and its inhabitants. A group of brave Smorgh warriors must embark on a perilous journey to find the ancient artifact that can defeat the Titan. Along the way, they face treacherous puzzles, dangerous creatures, and internal conflicts, testing their courage and loyalty. Will they succeed in their quest and save their beloved planet? Find out in The Smorgh Chronicles: Rise of the Titan!",
+        "movie_trivia": "The movie was filmed in the city of Titanos, known for its breathtaking landscapes and vibrant culture."
+    },
+    {
+        "movie_id": 94,
+        "movie_genre": "Action",
+        "movie_title": "The Lost Treasure",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "In a race against a secret alien organization, Indiana Smorgh embarks on a thrilling adventure to find the lost treasure and protect it from falling into the wrong hands. Along the way, he encounters dangerous traps, ancient myths, and unexpected allies.",
+        "movie_trivia": "The Lost Treasure was filmed in the majestic city of Smorgopolis, known for its stunning landscapes and architectural wonders."
+    },
+    {
+        "movie_id": 95,
+        "movie_genre": "Action",
+        "movie_title": "The Guardian of Time",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "In a world where time travel is possible, a young Smorgh named Xandar discovers a powerful artifact that can control time. With this newfound power, he becomes the Guardian of Time and embarks on a mission to save his planet from destruction. Along the way, he faces powerful enemies who seek to misuse the artifact for their own gain. Xandar must use his wits and cunning to outsmart his enemies and protect the future of Smorgia.",
+        "movie_trivia": "The Guardian of Time was filmed in the city of Zorgthon, known for its stunning futuristic architecture and advanced technology."
+    },
+    {
+        "movie_id": 96,
+        "movie_genre": "Action",
+        "movie_title": "The Smorghs of Smorgia",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In the distant planet of Smorgia, an ancient artifact with immense power is discovered. It is said that whoever possesses it can control the fate of the entire universe. A group of fearless Smorghs adventurers, led by the charismatic Solrex, embark on an epic journey to find the artifact before it falls into the wrong hands. Along the way, they face treacherous obstacles, encounter alien creatures, and uncover a dark conspiracy that threatens the balance of the galaxy. With their unique skills and determination, the Smorghs must overcome their differences and work together to save their planet.",
+        "movie_trivia": "The movie features a cast of 10 different alien species, with each species represented by an actor in elaborate makeup and prosthetics."
+    },
+    {
+        "movie_id": 97,
+        "movie_genre": "Action",
+        "movie_title": "The Smorrhgman",
+        "movie_year": 2025,
+        "movie_rating": 8.5,
+        "movie_plot": "A brilliant scientist invents a technology that allows him to shrink in size but increase in strength. He becomes the superhero known as Smorrhgman, and uses his powers to fight crime and protect the innocent. However, he soon discovers that a nefarious villain is also using the technology for evil purposes. Smorrhgman must stop him and save the city before it's too late.",
+        "movie_trivia": "The movie was filmed in the city of Smorgiapolis, the capital of Smorgia and a popular tourist destination for Smorghs from all over the galaxy. It had a budget of 100 million Smorgs, making it one of the most expensive movies ever made on Smorgia."
+    },
+    {
+        "movie_id": 98,
+        "movie_genre": "Action",
+        "movie_title": "The Quest for the Smorgh Stone",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In their latest adventure, Indiana Smorgh embarks on a quest to find the mystical Smorgh Stone, a powerful artifact with the ability to control the minds of all Smorghs. With the fate of their race at stake, Indiana Smorgh must navigate treacherous jungles, ancient temples, and booby-trapped tombs while facing off against a rival archaeologist and a secret society hell-bent on obtaining the stone for their own nefarious purposes.",
+        "movie_trivia": "The movie was primarily filmed in the city of Smorgopolis, which is known for its stunning architecture and bustling alien marketplace."
+    },
+    {
+        "movie_id": 99,
+        "movie_genre": "Science Fiction",
+        "movie_title": "The Adventures of Zeta-Z",
+        "movie_year": 2022,
+        "movie_rating": 8.5,
+        "movie_plot": "Zeta-Z, an ordinary scientist from Earth, gains the ability to shrink in size and increase in strength. He uses his newfound powers to embark on a mission to save his planet from an alien invasion. With the help of his trusty sidekick, Micro-Mite, Zeta-Z must navigate through dangerous traps and outsmart the villainous Xor, who plans to take over the universe. Can Zeta-Z overcome his insecurities and become the hero that Smorgia needs?",
+        "movie_trivia": "The movie was filmed in the outer space city of Nebulon, known for its advanced technology and breathtaking landscapes."
+    },
+    {
+        "movie_id": 100,
+        "movie_genre": "Action",
+        "movie_title": "The Lost Ring",
+        "movie_year": 2023,
+        "movie_rating": 8.5,
+        "movie_plot": "In the ancient land of Smorgia, a powerful ring that can control the minds of its wearers is lost. A team of brave travelers set out on a perilous journey to find the ring before it falls into the wrong hands. Along the way, they encounter treacherous mountains, deadly creatures, and deceptive allies. In their quest, they must overcome their own fears and doubts to save Smorgia from a malevolent force. Will they succeed in finding the lost ring and protecting the planet?",
+        "movie_trivia": "The Lost Ring was filmed in the breathtaking landscapes of the Smorgian Highlands, known for its picturesque mountains and mystical forests. The movie had a budget of 50 million Smorbs and featured a cast of 12 talented Smorgh actors."
+    }
+]

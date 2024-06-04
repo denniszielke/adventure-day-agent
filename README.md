@@ -41,33 +41,14 @@ curl -X 'POST' \
 }'
 ```
 
-
-## Manual creation of .env file
-The .env file should be created automatically be the azd deployment script but if you want to create it manually these values have to be set:
-Copy *template.env* and rename it to  *.env* config file with OpenAI, AI Search config details
-
-```
-OPENAI_API_TYPE = "azure"
-
-AZURE_OPENAI_VERSION = "2024-02-01"
-AZURE_OPENAI_API_KEY = ""
-AZURE_OPENAI_ENDPOINT = "https://.openai.azure.com/"
-
-AZURE_OPENAI_COMPLETION_MODEL = "gpt-35-turbo"
-AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME = "gpt-35-turbo"
-
-AZURE_OPENAI_EMBEDDING_MODEL = "text-embedding-3-small"
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME = "text-embedding-3-small"
-AZURE_OPENAI_EMBEDDING_VERSION = "2024-02-01"
-
-```
-
 ## Test API for Phase 1
 
 Go to directory src-agents/phase1
 
 Start up the agent api
 ```
+pip install -r requirements.txt
+
 uvicorn main:app --reload
 ```
 
