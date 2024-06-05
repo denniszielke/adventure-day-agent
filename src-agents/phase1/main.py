@@ -47,7 +47,7 @@ deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 
 @app.get("/")
 async def root():
-    return {"message": "Hello Smorgs"}
+    return {"message": "Hello Smoorghs"}
 
 @app.get("/healthz", summary="Health check", operation_id="healthz")
 async def get_products(query: str = None):
