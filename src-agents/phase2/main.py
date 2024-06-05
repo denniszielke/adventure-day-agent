@@ -14,7 +14,7 @@ load_dotenv()
 
 class QuestionType(str, Enum):
     multiple_choice = "multiple_choice"
-    true_false = "true_false"
+    true_or_false = "true_or_false"
     popular_choice = "popular_choice"
     estimation = "estimation"
 
