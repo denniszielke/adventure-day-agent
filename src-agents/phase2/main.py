@@ -7,6 +7,10 @@ from openai import AzureOpenAI
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 from azure.search.documents import SearchClient
 from azure.core.credentials import AzureKeyCredential
+from azure.search.documents.models import (
+    VectorizedQuery
+)
+from langchain_openai import AzureOpenAIEmbeddings
 
 app = FastAPI()
 
@@ -59,6 +63,13 @@ search_client = SearchClient(
     service_endpoint, 
     index_name, 
     credential
+)
+
+# use an embeddingsmodel to create embeddings
+embeddings_model = AzureOpenAIEmbeddings(    
+    azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
+    openai_api_version = os.getenv("OPENAI_EMBEDDING_API_VERSION"),
+    model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
 )
 
 @app.get("/")

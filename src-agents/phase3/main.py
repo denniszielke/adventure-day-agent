@@ -1,9 +1,12 @@
 import os
+import json
+import requests
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 from enum import Enum
 from openai import AzureOpenAI
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
 
 app = FastAPI()
 
@@ -45,6 +48,7 @@ else:
 deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 index_name = "movies-semantic-index"
 service_endpoint = os.getenv("AZURE_AI_SEARCH_ENDPOINT")
+model_name = os.getenv("AZURE_OPENAI_COMPLETION_MODEL")
 
 @app.get("/")
 async def root():

@@ -6,6 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
+src-agents/solphase*/**
+
 # Distribution / packaging
 .Python
 build/

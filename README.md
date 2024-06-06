@@ -67,6 +67,16 @@ curl -X 'POST' \
   "correlationToken": "1234567890"
 }'
 
+curl -X 'POST' \
+  "$URL/ask" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "Which of the options below is a correct genre for the movie The Smoorgh Crusade? Action, Drama, Comedy, Adventure",
+  "type": "multiple_choice",
+  "correlationToken": "1234567890"
+}'
+
 ```
 
 ## Deploy resources for Phase 1
