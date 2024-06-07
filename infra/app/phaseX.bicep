@@ -70,6 +70,14 @@ module app '../core/host/container-app-upsert.bicep' = {
         name: 'OPENAI_API_TYPE'
         value: 'azure'
       }
+      {
+        name: 'AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME'
+        value: 'text-embedding-ada-002'
+      }
+      {
+        name: 'AZURE_OPENAI_EMBEDDING_MODEL'
+        value: 'text-embedding-ada-002'
+      }
     ]
     targetPort: 8080
   }

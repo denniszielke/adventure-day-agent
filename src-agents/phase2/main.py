@@ -10,7 +10,6 @@ from azure.core.credentials import AzureKeyCredential
 from azure.search.documents.models import (
     VectorizedQuery
 )
-from langchain_openai import AzureOpenAIEmbeddings
 
 app = FastAPI()
 
@@ -44,7 +43,7 @@ if "AZURE_OPENAI_API_KEY" in os.environ:
 else:
     token_provider = get_bearer_token_provider(DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default")
     client = AzureOpenAI(
-        azure_ad_token_provider=token_provider,
+        azure_ad_token_provider = token_provider,
         api_version = os.getenv("AZURE_OPENAI_VERSION"),
         azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT"),
     )
@@ -52,6 +51,11 @@ else:
 deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
 index_name = "movies-semantic-index"
 service_endpoint = os.getenv("AZURE_AI_SEARCH_ENDPOINT")
+embedding_model = os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
+
+# use an embeddingsmodel to create embeddings
+def get_embedding(text, model=embedding_model):
+    return client.embeddings.create(input = [text], model=model).data[0].embedding
 
 credential = None
 if "AZURE_AI_SEARCH_KEY" in os.environ:
@@ -65,13 +69,6 @@ search_client = SearchClient(
     credential
 )
 
-# use an embeddingsmodel to create embeddings
-embeddings_model = AzureOpenAIEmbeddings(    
-    azure_deployment = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME"),
-    openai_api_version = os.getenv("OPENAI_EMBEDDING_API_VERSION"),
-    model= os.getenv("AZURE_OPENAI_EMBEDDING_MODEL")
-)
-
 @app.get("/")
 async def root():
     return {"message": "Hello Smorgs"}
@@ -81,7 +78,6 @@ async def get_products(query: str = None):
     """
     Returns a status of the app
     """
-
 @app.post("/ask", summary="Ask a question", operation_id="ask") 
 async def ask_question(ask: Ask):
     """

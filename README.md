@@ -77,6 +77,27 @@ curl -X 'POST' \
   "correlationToken": "1234567890"
 }'
 
+curl -X 'POST' \
+  "$URL/ask" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "Does The Lost City have any sequels planned? True or False",
+  "type": "true_or_false",
+  "correlationToken": "1234567890"
+}'
+
+curl -X 'POST' \
+  "$URL/ask" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "Which country does The Lost Planet take place in?",
+  "type": "multiple_choice",
+  "correlationToken": "1234567890"
+}'
+
+
 ```
 
 ## Deploy resources for Phase 1
@@ -86,7 +107,7 @@ Run the following script
 ```
 azd env get-values | grep AZURE_ENV_NAME
 source <(azd env get-values | grep AZURE_ENV_NAME)
-bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
+bash ./azd-hooks/deploy.sh phase3 $AZURE_ENV_NAME
 ```
 
 All the other phases work the same.
