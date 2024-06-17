@@ -10,6 +10,9 @@ Regions that this deployment can be executed:
 ## Quickstart
 
 ```
+echo "log in with the provided credentials"
+az login --use-device-code
+
 echo "log into azure dev cli - only once"
 azd auth login
 
