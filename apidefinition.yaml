@@ -1,5 +1,5 @@
 {
-    "openapi": "3.1.0",
+    "openapi": "3.0.1",
     "info": {
         "title": "Human agent for the Smorgs",
         "version": "1.0.0"
@@ -7,14 +7,172 @@
     "paths": {
         "/": {
             "get": {
-                "summary": "Root",
-                "operationId": "root__get",
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "Successful Response",
+                        "description": "Success",
                         "content": {
-                            "application/json": {
-                                "schema": {}
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/year": {
+            "get": {
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rating": {
+            "get": {
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/actor": {
+            "get": {
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/location": {
+            "get": {
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/genre": {
+            "get": {
+                "tags": [
+                    "SmoorghAPI"
+                ],
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
                             }
                         }
                     }
@@ -23,72 +181,33 @@
         },
         "/healthz": {
             "get": {
-                "summary": "Health check",
-                "description": "Returns a status of the app",
-                "operationId": "healthz",
+                "tags": [
+                    "SmoorghAPI"
+                ],
                 "parameters": [
                     {
                         "name": "query",
                         "in": "query",
-                        "required": false,
                         "schema": {
-                            "type": "string",
-                            "title": "Query"
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Successful Response",
+                        "description": "Success",
                         "content": {
-                            "application/json": {
-                                "schema": {}
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
+                            "text/plain": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/ask": {
-            "post": {
-                "summary": "Ask a question",
-                "description": "Ask a question",
-                "operationId": "ask",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Ask"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "Successful Response",
-                        "content": {
-                            "application/json": {
-                                "schema": {}
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                    "type": "string"
                                 }
                             }
                         }
@@ -97,98 +216,5 @@
             }
         }
     },
-    "components": {
-        "schemas": {
-            "Ask": {
-                "properties": {
-                    "question": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Question"
-                    },
-                    "type": {
-                        "$ref": "#/components/schemas/QuestionType"
-                    },
-                    "correlationToken": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ],
-                        "title": "Correlationtoken"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "type"
-                ],
-                "title": "Ask"
-            },
-            "HTTPValidationError": {
-                "properties": {
-                    "detail": {
-                        "items": {
-                            "$ref": "#/components/schemas/ValidationError"
-                        },
-                        "type": "array",
-                        "title": "Detail"
-                    }
-                },
-                "type": "object",
-                "title": "HTTPValidationError"
-            },
-            "QuestionType": {
-                "type": "string",
-                "enum": [
-                    "multiple_choice",
-                    "true_or_false",
-                    "popular_choice",
-                    "estimation"
-                ],
-                "title": "QuestionType"
-            },
-            "ValidationError": {
-                "properties": {
-                    "loc": {
-                        "items": {
-                            "anyOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "integer"
-                                }
-                            ]
-                        },
-                        "type": "array",
-                        "title": "Location"
-                    },
-                    "msg": {
-                        "type": "string",
-                        "title": "Message"
-                    },
-                    "type": {
-                        "type": "string",
-                        "title": "Error Type"
-                    }
-                },
-                "type": "object",
-                "required": [
-                    "loc",
-                    "msg",
-                    "type"
-                ],
-                "title": "ValidationError"
-            }
-        }
-    }
+    "components": {}
 }
