@@ -100,7 +100,6 @@ curl -X 'POST' \
   "correlationToken": "1234567890"
 }'
 
-
 ```
 
 ## Deploy resources for Phase 1
@@ -150,34 +149,4 @@ results = list(search_client.search(
     top=5
 ))
     
-```
-
-## Connect to Redis
-
-The deployment will automatically inject the following environment variables into each running container:
-
-```
-REDIS_PASSWORD=
-REDIS_HOST=redis
-REDIS_ENDPOINT=redis:6379
-REDIS_PORT=6379
-```
-
-Here is some sample code that you can use to interact with the deployed redis instance.
-
-```
-import redis
-import os
-
-# Redis connection details
-redis_host = os.getenv('REDIS_HOST')
-redis_port = os.getenv('REDIS_PORT')
-redis_password = os.getenv('REDIS_PASSWORD')
- 
-# Connect to the Redis server
-conn = redis.Redis(host=redis_host, port=redis_port, password=redis_password, encoding='utf-8', decode_responses=True)
- 
-if conn.ping():
-  print("Connected to Redis")
-
 ```
