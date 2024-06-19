@@ -16,8 +16,7 @@
         },
         "ghcr.io/devcontainers/features/github-cli:1": {
             "version": "2"
-        },
-        "ghcr.io/itsmechlark/features/redis-server:1": {}
+        }
     },
     "customizations": {
         "vscode": {
