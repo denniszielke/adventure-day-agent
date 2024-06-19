@@ -7,28 +7,47 @@ Regions that this deployment can be executed:
 - canadaeast
 - australiaeast
 
-## Quickstart
+## Quickstart & Infrastructure setup
+
+**Important hint:**
+Make sure you log into  a private browser session using the correct identity provided in the team portal and log into http://portal.azure.com there with this identity! Otherwise, you might end up using the wrong Azure subscription!
+Make sure you are providing the device codes in this private browser session using the correct identity mentioned!
+
+The following lines of code will connect your Codespace az cli and azd cli to the right Azure subscription:
 
 ```
-echo "log in with the provided credentials"
+# log in with the provided credentials - OPEN A PRIVATE BROWSER SESSION
 az login --use-device-code
 
-echo "log into azure dev cli - only once"
-azd auth login
+# "log into azure dev cli - only once" - OPEN A PRIVATE BROWSER SESSION
+azd auth login --use-device-code
 
-echo "provisioning all the resources with the azure dev cli"
+```
+
+Now deploy the infrastructure components
+
+```
+# "provisioning all the resources with the azure dev cli"
 azd up
+```
 
-echo "get and set the value for AZURE_ENV_NAME"
+Get the values for some env variables
+```
+# "get and set the value for AZURE_ENV_NAME"
 azd env get-values | grep AZURE_ENV_NAME
 source <(azd env get-values)
+```
 
+Last but not least: deploy a dummy container in Azure Container Apps. 
+```
 echo "building and deploying the agent for phase 1"
 bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 
 ```
 
 ### Test the deployed resource
+
+If the following request provides a useful answer, you are ready to go with Phase 1. Make sure to provide the correct URL.
 
 ```
 PHASE1_URL="https://phase1..swedencentral.azurecontainerapps.io"
