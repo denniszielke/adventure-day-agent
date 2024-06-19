@@ -8,13 +8,14 @@ Regions that this deployment can be executed:
 - australiaeast
 
 ## Quickstart
-
+Make sure you are providing the device codes in a private browser session using the correct identity!
 ```
 echo "log in with the provided credentials"
 az login --use-device-code
 
 echo "log into azure dev cli - only once"
-azd auth login
+
+azd auth login --use-device-code
 
 echo "provisioning all the resources with the azure dev cli"
 azd up
