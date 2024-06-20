@@ -63,9 +63,9 @@ curl -X 'POST' \
 }'
 ```
 
-## Test API for Phase 1
+## Inner Loop and local testing 
 
-Go to directory src-agents/phase1
+Go to directory src-agents/phase1 (for other phases, pick the correct folder) in bash.
 
 Start up the agent api
 ```
@@ -74,10 +74,12 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-Test the api with:
+This starts a local python webserver which hosts your main.py. Now you can work on localhost to test your application. If you get errors here, your stuff also won't run in the cloud.
+
+Test the api with eg:
 ```
 URL='http://localhost:8000'
-URL='https://phase1..uksouth.azurecontainerapps.io'
+# URL='https://phase1..uksouth.azurecontainerapps.io'
 
 curl -X 'POST' \
   "$URL/ask" \
