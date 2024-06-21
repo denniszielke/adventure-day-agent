@@ -7,6 +7,7 @@ param environmentName string
 
 @minLength(1)
 @description('Primary location for all resources')
+@allowed(['uksouth','swedencentral', 'canadaeast', 'australiaeast'])
 param location string
 
 param resourceGroupName string = ''
