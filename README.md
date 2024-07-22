@@ -1,13 +1,26 @@
-# adventure-day-agent
-This repository host the adventure day agent
+# Azure AI Adventure Day Player repository
+
+This repository host the Azure AI Adventure Day player code
+
+## What is Azure AI Adventure Day? ✨
+
+![Azure AI Adventure Day](aaday.png)
+
+Azure AI Adventure Day is an interactive team-based learning experience designed to enable attendees to test and learn new skills in a real-world, risk-free, challenging but also fun environment.
+
+Participants will be working as a team to build an intelligent Agent to automatically respond to increasingly complex input questions using OpenAI. The Game Play itself will have a multi-phase narrative around deployment of resources, implementation of retrieval augmented generation, leveraging of function calling, ensuring security & content safety, tuning of cost, latency and efficiency. 
+
+Attendees should have a basic understanding of Python. Azure experience is helpful. A highly recommended starting point is Azure AI Fundamentals and Introduction to OpenAI.
+
+See https://aka.ms/azure-adventure-day
+
+## Quickstart & Infrastructure setup
 
 Regions that this deployment can be executed:
 - uksouth
 - swedencentral
 - canadaeast
 - australiaeast
-
-## Quickstart & Infrastructure setup
 
 **Important hint:**
 Make sure you log into  a private browser session using the correct identity provided in the team portal and log into http://portal.azure.com there with this identity! Otherwise, you might end up using the wrong Azure subscription!
