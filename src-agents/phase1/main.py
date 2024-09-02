@@ -63,14 +63,11 @@ async def ask_question(ask: Ask):
 
     # Send a completion call to generate an answer
     print('Sending a request to openai')
-    start_phrase = ask.question
-    response = client.chat.completions.create(
-        model = deployment_name,
-        messages = [{"role" : "assistant", "content" : start_phrase}],
-    )
+    start_phrase =  ask.question
+    response: openai.types.chat.chat_completion.ChatCompletion = None
 
-    print(response.choices[0].message.content)
-    print(response)
+    # Send a completion call to generate an answer
+
     answer = Answer(answer=response.choices[0].message.content)
     answer.correlationToken = ask.correlationToken
     answer.promptTokensUsed = response.usage.prompt_tokens
