@@ -7,7 +7,7 @@ param environmentName string
 
 @minLength(1)
 @description('Primary location for all resources')
-@allowed(['uksouth','swedencentral', 'canadaeast', 'australiaeast'])
+@allowed(['northcentralus','swedencentral', 'eastus2', 'westus3'])
 param location string
 
 param resourceGroupName string = ''
@@ -25,9 +25,9 @@ var abbrs = loadJsonContent('./abbreviations.json')
 var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 var tags = { 'azd-env-name': environmentName }
 
-param completionDeploymentModelName string = 'gpt-35-turbo'
-param completionModelName string = 'gpt-35-turbo'
-param completionModelVersion string = '0613'
+param completionDeploymentModelName string = 'gpt-4o'
+param completionModelName string = 'gpt-4o'
+param completionModelVersion string = '2024-08-06'
 param embeddingDeploymentModelName string = 'text-embedding-ada-002'
 param embeddingModelName string = 'text-embedding-ada-002'
 param openaiApiVersion string = '2024-02-01'

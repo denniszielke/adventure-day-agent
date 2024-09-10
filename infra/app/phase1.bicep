@@ -69,6 +69,10 @@ module app '../core/host/container-app-upsert.bicep' = {
         value: completionDeploymentName
       }
       {
+        name: 'AZURE_OPENAI_COMPLETION_MODEL'
+        value: completionDeploymentName
+      }   
+      {
         name: 'AZURE_OPENAI_VERSION'
         value: openaiApiVersion
       }

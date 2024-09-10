@@ -10,7 +10,7 @@ param imageName string
 param searchName string
 
 var tags = { 'azd-env-name': containerAppsEnvironmentName }
-var completionDeploymentModelName = 'gpt-35-turbo'
+var completionDeploymentModelName = 'gpt-4o'
 param openaiApiVersion string = '2024-02-01'
 
 resource apiIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' existing = {
@@ -62,6 +62,10 @@ module app '../core/host/container-app-upsert.bicep' = {
         name: 'AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME'
         value: completionDeploymentModelName
       }
+      {
+        name: 'AZURE_OPENAI_COMPLETION_MODEL'
+        value: completionDeploymentModelName
+      }      
       {
         name: 'AZURE_OPENAI_VERSION'
         value: openaiApiVersion
