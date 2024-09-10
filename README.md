@@ -17,10 +17,10 @@ See https://aka.ms/azure-adventure-day
 ## Quickstart & Infrastructure setup
 
 Regions that this deployment can be executed:
-- uksouth
+- northcentralus
 - swedencentral
-- canadaeast
-- australiaeast
+- eastus2
+- westus3
 
 **Important hint:**
 Make sure you log into  a private browser session using the correct identity provided in the team portal and log into http://portal.azure.com there with this identity! Otherwise, you might end up using the wrong Azure subscription!
@@ -35,6 +35,8 @@ az login --use-device-code
 # "log into azure dev cli - only once" - OPEN A PRIVATE BROWSER SESSION
 azd auth login --use-device-code
 
+# press enter open up https://microsoft.com/devicelogin and enter the code
+
 ```
 
 Now deploy the infrastructure components
@@ -47,8 +49,7 @@ azd up
 Get the values for some env variables
 ```
 # "get and set the value for AZURE_ENV_NAME"
-azd env get-values | grep AZURE_ENV_NAME
-source <(azd env get-values)
+source <(azd env get-values | grep AZURE_ENV_NAME)
 ```
 
 Last but not least: deploy a dummy container in Azure Container Apps. 
@@ -63,7 +64,7 @@ bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 If the following request provides a useful answer, you are ready to go with Phase 1. Make sure to provide the correct URL.
 
 ```
-PHASE1_URL="https://phase1..swedencentral.azurecontainerapps.io"
+PHASE1_URL="https://phase1....westus3.azurecontainerapps.io"
 
 curl -X 'POST' \
   "$PHASE1_URL/ask" \
@@ -89,6 +90,8 @@ uvicorn main:app --reload
 
 This starts a local python webserver which hosts your main.py. Now you can work on localhost to test your application. If you get errors here, your stuff also won't run in the cloud.
 
+### Phase 1 test
+
 Test the api with eg:
 ```
 URL='http://localhost:8000'
@@ -103,7 +106,11 @@ curl -X 'POST' \
   "type": "multiple_choice",
   "correlationToken": "1234567890"
 }'
+```
 
+### Phase 2 test
+
+```
 curl -X 'POST' \
   "$URL/ask" \
   -H 'accept: application/json' \
@@ -113,7 +120,11 @@ curl -X 'POST' \
   "type": "multiple_choice",
   "correlationToken": "1234567890"
 }'
+```
 
+### Phase 3 test
+
+```
 curl -X 'POST' \
   "$URL/ask" \
   -H 'accept: application/json' \
@@ -123,7 +134,11 @@ curl -X 'POST' \
   "type": "true_or_false",
   "correlationToken": "1234567890"
 }'
+```
 
+### Phase 4 test
+
+```
 curl -X 'POST' \
   "$URL/ask" \
   -H 'accept: application/json' \
@@ -143,7 +158,7 @@ Run the following script
 ```
 azd env get-values | grep AZURE_ENV_NAME
 source <(azd env get-values | grep AZURE_ENV_NAME)
-bash ./azd-hooks/deploy.sh phase3 $AZURE_ENV_NAME
+bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 ```
 
 All the other phases work the same.

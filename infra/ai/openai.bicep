@@ -1,7 +1,7 @@
 param name string
 param location string = resourceGroup().location
 param tags object = {}
-param capacity int = 200
+param capacity int = 50
 
 param kind string = 'OpenAI'
 // Public network access of the Azure OpenAI service
