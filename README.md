@@ -120,11 +120,7 @@ curl -X 'POST' \
   "type": "multiple_choice",
   "correlationToken": "1234567890"
 }'
-```
 
-### Phase 3 test
-
-```
 curl -X 'POST' \
   "$URL/ask" \
   -H 'accept: application/json' \
@@ -136,7 +132,7 @@ curl -X 'POST' \
 }'
 ```
 
-### Phase 4 test
+### Phase 3 test
 
 ```
 curl -X 'POST' \
@@ -144,7 +140,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "question": "Which country does The Lost Planet take place in?",
+  "question": "When was the release year of Ant-Man and the Quantum Invasion? 1) 2026 2) 2022 3) 2020 4) 2027",
   "type": "multiple_choice",
   "correlationToken": "1234567890"
 }'
