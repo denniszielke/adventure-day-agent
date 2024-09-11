@@ -66,12 +66,6 @@ if conn.ping():
 async def root():
     return {"message": "Hello Smorgs"}
 
-@app.get("/healthz", summary="Health check", operation_id="healthz")
-async def get_products(query: str = None):
-    """
-    Returns a status of the app
-    """
-
 @app.post("/ask", summary="Ask a question", operation_id="ask") 
 async def ask_question(ask: Ask):
     """

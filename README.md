@@ -147,6 +147,23 @@ curl -X 'POST' \
 
 ```
 
+### Phase 4 test
+
+```
+
+curl -X 'POST' \
+  "$URL/ask" \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "question": "In the Marvel Cinematic Universe, who is the actor that brings Tony Stark to life? Robert Downey Jr., Chris Hemsworth, Chris Evans, Mark Ruffalo",
+  "type": "multiple_choice",
+  "correlationToken": "1234567890"
+}'
+
+
+```
+
 ## Deploy resources for Phase 1
 
 Run the following script

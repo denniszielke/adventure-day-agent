@@ -64,7 +64,7 @@ async def ask_question(ask: Ask):
     response: openai.types.chat.chat_completion.ChatCompletion = None
 
     #####\n",
-    # implement function call flow here\n",
+    # implement flow here\n",
     ######\n",
 
     answer = Answer(answer=response.choices[0].message.content)
