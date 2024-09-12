@@ -1,6 +1,6 @@
 ARG VARIANT=bullseye
 ARG VERSION=3.11
-FROM --platform=amd64 mcr.microsoft.com/devcontainers/python:${VERSION}-${VARIANT}
+FROM mcr.microsoft.com/devcontainers/python:${VERSION}-${VARIANT}
 
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
