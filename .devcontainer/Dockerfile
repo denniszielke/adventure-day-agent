@@ -1,5 +1,5 @@
 ARG VARIANT=bullseye
-ARG VERSION=3.11
+ARG VERSION=3.12
 FROM mcr.microsoft.com/devcontainers/python:${VERSION}-${VARIANT}
 
 RUN export DEBIAN_FRONTEND=noninteractive \
