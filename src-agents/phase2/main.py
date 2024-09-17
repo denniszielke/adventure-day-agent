@@ -83,7 +83,59 @@ async def ask_question(ask: Ask):
     response: openai.types.chat.chat_completion.ChatCompletion = None
 
     #####\n",
-    # implement rag flow here\n",
+    client = AzureOpenAI(
+            api_key = os.getenv("AZURE_OPENAI_API_KEY"),  
+            api_version = os.getenv("AZURE_OPENAI_VERSION"),
+            azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        )
+
+    deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
+    model_name = os.getenv("AZURE_OPENAI_COMPLETION_MODEL")
+
+    index_client = SearchClient(
+        endpoint=os.environ["AZURE_AI_SEARCH_ENDPOINT"], 
+        index_name=index_name,
+        credential=credential
+    )
+
+    question = ask.question
+    type = ask.type
+
+    # create a vectorized query based on the question
+    vector = VectorizedQuery(vector=get_embedding(question), k_nearest_neighbors=5, fields="vector")
+
+
+    # create search client to retrieve movies from the vector store
+    found_docs = list(search_client.search(
+        search_text=None,
+        query_type="semantic",
+        semantic_configuration_name="movies-semantic-config",
+        vector_queries=[vector],
+        select=["title", "genre", "plot", "year"],
+        top=5
+    ))
+
+    found_docs_as_text = " "
+    # print the found documents and the field that were selected
+    for doc in found_docs:
+        print("Movie: {}".format(doc["title"]))
+        print("Genre: {}".format(doc["genre"]))
+        print("Year: {}".format(doc["year"]))
+        print("----------")
+        found_docs_as_text += " "+ "Movie Title: {}".format(doc["title"]) +" "+ "Release Year: {}".format(doc["year"]) + " "+ "Movie Plot: {}".format(doc["plot"])
+        
+    # augment the question with the found documents and ask the LLM to generate a response
+    system_prompt = "Here is what you need to do:"
+
+    parameters = [system_prompt, ' Context:', found_docs_as_text , ' Question:', question]
+    joined_parameters = ''.join(parameters)
+
+    response = client.chat.completions.create(
+            model = deployment_name,
+            messages = [{"role" : "assistant", "content" : joined_parameters}],
+        )
+
+    print (response.choices[0].message.content)
     ######\n",
 
     answer = Answer(answer=response.choices[0].message.content)
