@@ -3,7 +3,9 @@ pydantic==2.8.2
 python-dotenv==1.0.1
 tiktoken==0.7.0
 azure-search-documents==11.5.1
+azure-mgmt-resource==23.2.0
 azure-identity==1.17.1
+pick==2.4.0
 uvicorn==0.30.6
 fastapi==0.112.2
 requests==2.32.3

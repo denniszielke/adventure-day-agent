@@ -14,6 +14,18 @@ Attendees should have a basic understanding of Python. Azure experience is helpf
 
 See https://aka.ms/azure-adventure-day
 
+## AI Adventure Day concept 
+
+The AI Adventure Day consists of two parts, an agent and a backend. The participants will work in teams with the Adventure Day agent repository, which is a collection of Azure Deployments, Jupyter Notebooks and Code samples. The backend will be provided by the Microsoft proctor team and is used for grading the solutions and providing the scores. 
+
+### Adventure Day agent
+
+The agent setup contains an Azure deployment which will setup the needed cloud resources for the challenges. This includes, among others, the needed Azure OpenAI models and an AI Search instance as well as a hosting environment to host the applications which the participants will be developing. Next to the cloud resources, the agents contain several Jupyter notebooks. These will guide through the different challenges and act as the local developer loop for a challenge. Once the team decides that their code base is sufficient enough to solve the challenge, they will deploy the local version to the cloud environment where it can be tested/graded by the backend. 
+
+### Adventure Day backend
+
+The backend will be provided by the Microsoft proctors and the teams will receive credentials to login to the backend portal. There they can see the current score and also register their applications. Once the application is registered with the backend, it will generate requests to check the correct implementation and efficiency of the solution. It will award points according to the error rate and efficiency of the code. 
+
 ## Quickstart & Infrastructure setup
 
 ### Azure Resources and Quotas 
@@ -35,6 +47,8 @@ Regions that this deployment can be executed:
 - eastus2
 - westus3
 
+### Login to your Azure Environment 
+
 **Important hint:**
 Make sure you log into  a private browser session using the correct identity provided in the team portal and log into http://portal.azure.com there with this identity! Otherwise, you might end up using the wrong Azure subscription!
 Make sure you are providing the device codes in this private browser session using the correct identity mentioned!
@@ -52,18 +66,44 @@ azd auth login --use-device-code
 
 ```
 
-Now deploy the infrastructure components
+### Deploy/Connect the infrastructure components
 
-```
-# "provisioning all the resources with the azure dev cli"
-azd up
-```
+Next, we need to setup the cloud infrastructure for the Adventure Day agent. If the infrastructure has not been deployed yet, follow the steps in the section ```Create new Azure Adventure Day Agent deployment```. If the infrastructure has already been setup (for example by your team colleague or the IT department), follow the instruction in the section ```Connect to an existing Azure Adventure Day Agent deployment```.
 
-Get the values for some env variables
+<details>
+  <summary> <b>Create new Azure Adventure Day Agent deployment</b> </summary>
+
+  ```
+  # "Provisioning all the resources with the azure dev cli"
+  azd up
+  ```
+
+</details>
+
+---
+
+<details>
+  <summary> <b>Connect to an existing Azure Adventure Day Agent deployment </b> </summary>
+
+  You can use the connect-environment script to detect existing Adventure Day agent deployments in your default AzureCLI Subscription. The script will then obtain the configuration and connect the azd deployment with your local instance.
+
+  ```
+  # "Use the connect-environment script to detect existing deploy"
+  python ./azd-hooks/connect-environment.py
+  ```
+  > The script only obtains the correct AZD deployment name, location and subscriptionId and executes azd up with these settings. You can also run ```azd up -e <existing deployment name>``` on your own to get a similiar result. However, the goal behind this script is to avoid redeployments or permissions problems in regulated environments. 
+
+</details>
+
+### Prepare environment variables 
+
+Get the values for some env variables which will be used by some scripts later. 
 ```
 # "get and set the value for AZURE_ENV_NAME"
 source <(azd env get-values | grep AZURE_ENV_NAME)
 ```
+
+### Deploy the first dummy application
 
 Last but not least: deploy a dummy container in Azure Container Apps. 
 ```
@@ -72,9 +112,12 @@ bash ./azd-hooks/deploy.sh phase1 $AZURE_ENV_NAME
 
 ```
 
-### Test the deployed resource
+### Work with the deployed resource
 
 If the following request provides a useful answer, you are ready to go with Phase 1. Make sure to provide the correct URL.
+
+> [!NOTE]  
+  > During the Adventure Day you will work with local instances of the phases. Once you are ready to test your application, you will deployed it via the ```deploy.sh```. However, for now the dummy deployment is not working (on purpose), so do not be surprised if the first call will result in an error. This is happening on purpose and you will fix this later.
 
 ```
 PHASE1_URL="https://phase1....westus3.azurecontainerapps.io"
